@@ -15,8 +15,14 @@ const planSlice = createSlice({
       }
       state.plans[monthKey][date] = text;
     },
+    deletePlan(state, action) {
+      const { date, monthKey } = action.payload;
+      if (state.plans[monthKey]) {
+        delete state.plans[monthKey][date];
+      }
+    },
   },
 });
 
-export const { savePlan } = planSlice.actions;
+export const { savePlan, deletePlan } = planSlice.actions;
 export default planSlice.reducer;

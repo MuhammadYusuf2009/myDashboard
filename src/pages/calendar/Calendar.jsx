@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Calendar, Modal, Input, Button } from "rsuite";
-import { useDispatch, useSelector } from "react-redux";
-import { savePlan } from "../../store/calendars";
+import { Calendar, Modal, Input } from "rsuite";
+import { useSelector } from "../../hooks/use-selector";
+import { useDispatch } from "../../hooks/use-dispatch";
+import { deletePlan, savePlan } from "../../store/calendars";
 import "rsuite/dist/rsuite.min.css";
+import SaveButton from "../../components/button/SaveButton";
+import BackButton from "../../components/button/BackButton";
+import RemoveButton from "../../components/button/RemoveButton";
 
 function Calendars() {
   const today = new Date();
@@ -44,7 +48,14 @@ function Calendars() {
       setOpen(true);
     }
   };
-
+  const handleDelete = () => {
+    if (!selectedDate) return;
+    const monthKey = getMonthKey(selectedDate);
+    const dayKey = selectedDate.toDateString();
+    dispatch(deletePlan({ date: dayKey, monthKey }));
+    setOpen(false);
+    setPlanText("");
+  };
   const handleSave = () => {
     const monthKey = getMonthKey(selectedDate);
     const dayKey = selectedDate.toDateString();
@@ -96,9 +107,26 @@ function Calendars() {
             textAlign: "center",
           };
 
+          const hasPlan = (() => {
+            const key = getMonthKey(date);
+            const dKey = date.toDateString();
+            return plans[key] && plans[key][dKey];
+          })();
+
           return (
             <div style={style}>
-              <div>{date.getDate()}</div>
+              {isCurrentMonth && hasPlan && (
+                <div
+                  style={{
+                    width: "6px",
+                    height: "6px",
+                    borderRadius: "50%",
+                    backgroundColor: "#FFEB3B",
+                    marginTop: "4px",
+                  }}
+                />
+              )}
+
               {isCurrentMonth && isToday && (
                 <div
                   style={{
@@ -131,17 +159,14 @@ function Calendars() {
             as="textarea"
             rows={4}
             value={planText}
-            onChange={setPlanText}
+            onChange={(value) => setPlanText(value)}
             placeholder="Reja matnini yozing..."
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleSave} appearance="primary">
-            Saqlash
-          </Button>
-          <Button onClick={() => setOpen(false)} appearance="subtle">
-            Bekor qilish
-          </Button>
+          <SaveButton onClick={handleSave} />
+          <BackButton onClick={() => setOpen(false)} sx={{ ml: 2 }} />
+          <RemoveButton onClick={handleDelete} sx={{ ml: 2 }} />
         </Modal.Footer>
       </Modal>
 
@@ -160,8 +185,8 @@ function Calendars() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "10px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gap: "8px",
               alignItems: "start",
             }}
           >
@@ -170,18 +195,21 @@ function Calendars() {
                 key={date}
                 style={{
                   background: "#f9f9f9",
-                  padding: "10px",
+                  padding: "8px",
                   borderRadius: "6px",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
                   height: "100px",
                   display: "flex",
                   flexDirection: "column",
+                  overflow: "hidden",
                 }}
               >
-                <strong style={{ marginBottom: "5px" }}>{date}</strong>
+                <strong style={{ marginBottom: "4px", fontSize: "13px" }}>
+                  {date}
+                </strong>
                 <div
                   style={{
-                    fontSize: "14px",
+                    fontSize: "13px",
                     whiteSpace: "pre-wrap",
                     wordBreak: "break-word",
                     overflowY: "auto",
