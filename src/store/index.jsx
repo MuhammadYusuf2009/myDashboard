@@ -8,7 +8,7 @@ const persistConfig = {
   key: "root",
   storage,
   version: 5,
-  whitelist: ["App", "Todolist"],
+  whitelist: ["App", "Todolist", "plans"],
   transforms: [
     encryptTransform({
       secretKey: "MuhammadYusuf",
