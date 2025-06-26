@@ -31,7 +31,7 @@ function LoginLayout() {
 
       <Box
         sx={{
-          width: { xs: "100%", md: "550px" },
+          width: { xs: "100%", md: "600px" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

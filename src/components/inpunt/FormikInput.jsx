@@ -22,9 +22,9 @@ const FormikInput = ({
 
   return (
     <Stack spacing={0.5}>
-      {label && <InputLabel>{label}</InputLabel>}
       <FormControl fullWidth>
         <TextField
+          label={label}
           {...props}
           type={type}
           size={size}
