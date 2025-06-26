@@ -1,7 +1,12 @@
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-
 function LoginLayout() {
+  useEffect(() => {
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.boxSizing = "border-box";
+  }, []);
   return (
     <Box sx={{ display: "flex", minHeight: "100vh" }}>
       <Box
@@ -9,7 +14,7 @@ function LoginLayout() {
           flex: 1,
           display: { xs: "none", md: "flex" },
           alignItems: "center",
-          justifyContent: "flex-end",
+          justifyContent: "center",
           background:
             "linear-gradient(rgba(249, 250, 251, 0.88), rgba(249, 250, 251, 0.88))",
           padding: 5,
@@ -32,7 +37,6 @@ function LoginLayout() {
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: "#fff",
-          padding: 3,
         }}
       >
         <Outlet />

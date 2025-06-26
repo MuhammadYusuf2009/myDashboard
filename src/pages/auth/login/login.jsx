@@ -6,6 +6,7 @@ import {
   Stack,
   Typography,
   Box,
+  Paper,
 } from "@mui/material";
 import { useState } from "react";
 import { Formik, Form, useFormikContext } from "formik";
@@ -29,20 +30,29 @@ const FormComponent = () => {
         handleSubmit(e);
       }}
     >
-      <Stack
-        spacing={2}
+      <Paper
+        elevation={6}
         sx={{
-          height: "100vh",
-          maxWidth: 400,
+          px: 4,
+          py: 5,
+          borderRadius: 4,
           mx: "auto",
-          justifyContent: "center",
-          px: 2,
+          boxShadow: "0 10px 25px rgba(0, 0, 0, 0.08)",
         }}
       >
-        <Stack spacing={1}>
-          <Typography textAlign={"center"} variant="h4">
-            Tizimga kirish
-          </Typography>
+        <Stack spacing={3}>
+          <Box textAlign="center">
+            <Typography
+              variant="h4"
+              fontWeight="bold"
+              sx={{ color: "#4A148C" }}
+            >
+              Tizimga kirish
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Xush kelibsiz! Davom etish uchun maʼlumotlarni kiriting
+            </Typography>
+          </Box>
 
           <FormikInput field="email" label="Email" fullWidth />
           <FormikInput
@@ -63,44 +73,86 @@ const FormComponent = () => {
               ),
             }}
           />
-        </Stack>
-        <Button type="submit" variant="contained" fullWidth color="success">
-          Kirish
-        </Button>
-        <Divider sx={{ borderStyle: "dashed" }}>yoki</Divider>
-        <Button
-          variant="contained"
-          onClick={loginWithGoogle}
-          fullWidth
-          color="success"
-        >
-          Google orqali Kirish
-        </Button>
-        <Button fullWidth variant="contained">
-          <Link
-            to={MY_REGISTER_PAGE}
-            style={{ textDecoration: "none", color: "white" }}
+
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{
+              background: "linear-gradient(90deg, #7B1FA2, #512DA8)",
+              color: "#fff",
+              fontWeight: "bold",
+              textTransform: "none",
+              "&:hover": {
+                background: "linear-gradient(90deg, #6A1B9A, #4527A0)",
+              },
+            }}
           >
-            Ro‘yxatdan o‘tish
-          </Link>
-        </Button>
-      </Stack>
+            Kirish
+          </Button>
+
+          <Divider sx={{ fontSize: 16, color: "text.secondary" }}>yoki</Divider>
+
+          <Button
+            variant="outlined"
+            onClick={loginWithGoogle}
+            fullWidth
+            sx={{
+              textTransform: "none",
+              borderColor: "#7B1FA2",
+              color: "#7B1FA2",
+              fontWeight: "bold",
+              "&:hover": {
+                backgroundColor: "#f3e5f5",
+                borderColor: "#6A1B9A",
+              },
+            }}
+          >
+            Google orqali kirish
+          </Button>
+
+          <Button fullWidth sx={{ textTransform: "none" }}>
+            <Link
+              to={MY_REGISTER_PAGE}
+              style={{
+                textDecoration: "none",
+                color: "#512DA8",
+                fontWeight: "bold",
+              }}
+            >
+              Ro‘yxatdan o‘tish
+            </Link>
+          </Button>
+        </Stack>
+      </Paper>
     </Form>
   );
 };
 
 const LoginPage = () => {
   return (
-    <Formik
-      initialValues={{ email: "", password: "" }}
-      validationSchema={Yup.object({
-        email: Yup.string().email("Email noto‘g‘ri").required("Email shart"),
-        password: Yup.string().required("Parol shart"),
-      })}
-      onSubmit={(values) => loginUser(values)}
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        px: 2,
+        background: "linear-gradient(135deg, #E1BEE7, #C5CAE9)",
+        width: "100%",
+      }}
     >
-      <FormComponent />
-    </Formik>
+      <Formik
+        initialValues={{ email: "", password: "" }}
+        validationSchema={Yup.object({
+          email: Yup.string().email("Email noto‘g‘ri").required("Email shart"),
+          password: Yup.string().required("Parol shart"),
+        })}
+        onSubmit={(values) => loginUser(values)}
+      >
+        <FormComponent />
+      </Formik>
+    </Box>
   );
 };
 

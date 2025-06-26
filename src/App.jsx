@@ -11,6 +11,12 @@ function App() {
       document.body.style.overflow = "auto";
     };
   }, []);
+  useEffect(() => {
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.boxSizing = "border-box";
+  }, []);
+
   return (
     <ReduxProvider store={store}>
       <PersistGate persistor={persistor}>
