@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "../../hooks/use-dispatch";
-import { useSelector } from "../../hooks/use-selector";
-import { todolistActions } from "../../store/todolist/index";
-
 import {
   Box,
   Typography,
@@ -12,7 +8,9 @@ import {
   Paper,
   Container,
 } from "@mui/material";
-
+import { useDispatch } from "../../hooks/use-dispatch";
+import { useSelector } from "../../hooks/use-selector";
+import { todolistActions } from "../../store/todolist";
 import AddButton from "../../components/button/AddButton";
 import RemoveButton from "../../components/button/RemoveButton";
 import SaveButton from "../../components/button/SaveButton";
@@ -75,36 +73,17 @@ function Task() {
   };
 
   return (
-    <Box
-      minHeight="100vh"
-      width="100%"
-      sx={{
-        background: "linear-gradient(to right, #dfe6e9, #b2bec3)",
-        py: 4,
-      }}
-    >
-      <Container
-        maxWidth="md"
-        sx={{
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          bgcolor: "#ffffff",
-          boxShadow: 6,
-          borderRadius: 3,
-          p: 4,
-        }}
-      >
-        <Box mb={3}>
+    <Box minHeight="100vh" width="100%" sx={{ background: "#ecf0f1", py: 4 }}>
+      <Container maxWidth="md" sx={{ bgcolor: "#fff", p: 4, borderRadius: 3 }}>
+        <Box mb={3} textAlign="center">
           <Typography variant="h4" fontWeight={700} gutterBottom>
             📋 Mening Vazifalarim
           </Typography>
           <Typography color="textSecondary">
-            Kundalik ishlaringizni boshqaring va rejalashtiring
+            Kundalik ishlaringizni rejalang va kuzating
           </Typography>
         </Box>
-
-        <Box display="flex" gap={2} mb={3} flexWrap="wrap">
+        <Box display="flex" gap={2} mb={3}>
           <TextField
             label="Yangi vazifa"
             fullWidth
@@ -130,26 +109,19 @@ function Task() {
           )}
         </Box>
 
-        <Box
-          sx={{
-            flexGrow: 1,
-            overflowY: "auto",
-            pr: 1,
-          }}
-        >
+        <Box sx={{ maxHeight: 400, overflowY: "auto" }}>
           {todolists.length === 0 ? (
-            <Typography color="textSecondary">Hozircha vazifalar yo‘q</Typography>
+            <Typography color="textSecondary">
+              Hozircha vazifalar yo‘q
+            </Typography>
           ) : (
             <List>
               {todolists.map((todo, index) => (
                 <Paper
                   key={todo.id}
-                  elevation={2}
                   sx={{
                     p: 2,
                     mb: 2,
-                    borderRadius: 2,
-                    bgcolor: todo.done ? "#e8f5e9" : "#fdfdfd",
                     borderLeft: `4px solid ${
                       todo.done ? "#4caf50" : "#1976d2"
                     }`,
@@ -161,18 +133,16 @@ function Task() {
                       color: todo.done ? "#777" : "#000",
                       fontSize: "17px",
                       fontWeight: 500,
-                      wordBreak: "break-word",
                     }}
                   >
                     {index + 1}. {todo.title}
                   </Typography>
-
-                  <Box display="flex" gap={1} mt={2} flexWrap="wrap">
+                  <Box display="flex" gap={1} mt={2}>
                     <RemoveButton onClick={() => handleRemove(todo.id)} />
                     <Button
                       size="small"
-                      color={todo.done ? "success" : "inherit"}
                       variant={todo.done ? "contained" : "outlined"}
+                      color={todo.done ? "success" : "inherit"}
                       onClick={() => handleToggleDone(todo.id)}
                     >
                       {todo.done ? "Bajarildi" : "Bajarilmagan"}

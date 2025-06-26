@@ -1,12 +1,49 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
-import { Drawer, IconButton, Stack, useMediaQuery, Box } from "@mui/material";
+import {
+  Drawer,
+  IconButton,
+  Stack,
+  useMediaQuery,
+  Box,
+  Typography,
+  Divider,
+} from "@mui/material";
 import NavList from "./NavList";
 import Logo from "../Logo";
+import LinearProgres from "../../../components/LinearProgres/LinearProgres";
+import { useSelector } from "../../../hooks/use-selector";
+import { getProgress } from "../../../store/todolist";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:850px)");
+  const progress = useSelector(getProgress);
+
+  const renderProgressBox = (
+    <Box
+      sx={{
+        p: 2,
+        mt: 2,
+        bgcolor: "#f0f4f8",
+        borderRadius: 3,
+        boxShadow: 2,
+        display: "flex",
+        alignItems: "center",
+        gap: 2,
+        flexDirection: "column",
+      }}
+    >
+      <Typography
+        variant="subtitle2"
+        color="text.secondary"
+        sx={{ fontWeight: 600 }}
+      >
+        Vazifalar bajarilishi:
+      </Typography>
+      <LinearProgres progress={progress} />
+    </Box>
+  );
 
   return (
     <>
@@ -25,27 +62,25 @@ function Navbar() {
             onClose={() => setOpen(false)}
             PaperProps={{
               sx: {
-                width: 250,
+                width: 280,
                 p: 2,
                 pt: 5,
               },
-            }}
-            ModalProps={{
-              opens: true,
             }}
           >
             <Box sx={{ mb: 2 }}>
               <Logo />
             </Box>
+            <Divider sx={{ my: 2 }} />
             <NavList />
+            <Box>{renderProgressBox}</Box>
           </Drawer>
         </>
       ) : (
-        <Stack direction="column" spacing={4} sx={{ p: 2, mt: 2 }}>
-          <Box>
-            <Logo />
-          </Box>
+        <Stack direction="column" spacing={3} sx={{ p: 2, mt: 2 }}>
+          <Logo />
           <NavList />
+          <Box>{renderProgressBox}</Box>
         </Stack>
       )}
     </>
