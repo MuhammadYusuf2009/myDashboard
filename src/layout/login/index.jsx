@@ -1,53 +1,43 @@
-import { Box, Grid, Stack } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 function LoginLayout() {
   return (
-    <Grid container spacing={10}>
-      <Grid
-        size={{ xs: 12, md: 8 }}
+    <Box sx={{ display: "flex", minHeight: "100vh" }}>
+      <Box
         sx={{
+          flex: 1,
+          display: { xs: "none", md: "flex" },
+          alignItems: "center",
+          justifyContent: "flex-end",
           background:
             "linear-gradient(rgba(249, 250, 251, 0.88), rgba(249, 250, 251, 0.88))",
-          paddingLeft: "100px",
-          width: "200px",
-          "@media (max-width:950px)": {
-            display: "none",
-          },
+          padding: 5,
         }}
       >
-        <Stack
+        <Box
+          component="img"
+          src="/dashboard.svg"
           sx={{
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            width: "80%",
+            maxWidth: "600px",
           }}
-        >
-          <Box
-            component="img"
-            sx={{
-              width: "100%",
-              "@media (max-width:950px)": {
-                display: "none",
-              },
-            }}
-            src={"/dashboard.svg"}
-          />
-        </Stack>
-      </Grid>
-      <Grid
-        size={{ xs: 1, md: 3 }}
+        />
+      </Box>
+
+      <Box
         sx={{
-          "@media (max-width:950px)": {
-            flexGrow: 1,
-            width: "100%",
-          },
+          width: { xs: "100%", md: "450px" },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#fff",
+          padding: 3,
         }}
       >
         <Outlet />
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 }
 

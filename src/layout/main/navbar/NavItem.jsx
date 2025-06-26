@@ -20,6 +20,10 @@ function NavItem({ title, icon, path, children }) {
 
   const handleClose = () => setAnchorEl(null);
 
+  const activeColor = "#0D47A1"; // deep blue
+  const activeBg = "#E3F2FD"; // light blue background
+  const hoverBg = "#F5F7FA"; // soft gray
+
   if (children) {
     return (
       <>
@@ -30,13 +34,21 @@ function NavItem({ title, icon, path, children }) {
           startIcon={<Icon icon={icon} />}
           sx={{
             textTransform: "none",
-            color: isChildActive ? "#1976d2" : "#737791",
-            bgcolor: isChildActive ? "#e3f2fd" : "transparent",
+            color: isChildActive ? activeColor : "#555",
+            bgcolor: isChildActive ? activeBg : "transparent",
             width: "100%",
             justifyContent: "flex-start",
             p: 2,
-            borderRadius: "10px",
-            fontWeight: 500,
+            borderRadius: "12px",
+            fontWeight: 600,
+            transition: "all 0.2s ease-in-out",
+            boxShadow: isChildActive
+              ? "0 2px 8px rgba(13, 71, 161, 0.1)"
+              : "none",
+            "&:hover": {
+              bgcolor: hoverBg,
+              transform: "scale(1.01)",
+            },
           }}
         >
           {title}
@@ -46,17 +58,13 @@ function NavItem({ title, icon, path, children }) {
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={handleClose}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "left",
-          }}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          transformOrigin={{ vertical: "top", horizontal: "left" }}
           PaperProps={{
             sx: {
-              width: buttonRef.current?.offsetWidth || 180,
+              width: buttonRef.current?.offsetWidth || 200,
+              borderRadius: "10px",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
             },
           }}
         >
@@ -69,10 +77,14 @@ function NavItem({ title, icon, path, children }) {
                 to={item.path}
                 onClick={handleClose}
                 sx={{
-                  color: active ? "#1976d2" : "#444",
-                  fontWeight: 500,
-                  bgcolor: active ? "#e3f2fd" : "transparent",
-                  "&:hover": { bgcolor: "#f0f0f0" },
+                  color: active ? activeColor : "#333",
+                  fontWeight: active ? 600 : 500,
+                  bgcolor: active ? activeBg : "transparent",
+                  borderRadius: "8px",
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    bgcolor: "#EEF3F9",
+                  },
                 }}
               >
                 <Icon icon={item.icon} style={{ marginRight: 8 }} />
@@ -92,15 +104,18 @@ function NavItem({ title, icon, path, children }) {
       startIcon={<Icon icon={icon} />}
       sx={{
         textTransform: "none",
-        color: isActive ? "#1976d2" : "#737791",
-        bgcolor: isActive ? "#e3f2fd" : "transparent",
+        color: isActive ? activeColor : "#555",
+        bgcolor: isActive ? activeBg : "transparent",
         width: "100%",
         justifyContent: "flex-start",
         p: 2,
-        borderRadius: "10px",
-        fontWeight: 500,
+        borderRadius: "12px",
+        fontWeight: 600,
+        transition: "all 0.2s ease-in-out",
+        boxShadow: isActive ? "0 2px 8px rgba(13, 71, 161, 0.1)" : "none",
         "&:hover": {
-          bgcolor: "#f5f5f5",
+          bgcolor: hoverBg,
+          transform: "scale(1.01)",
         },
       }}
     >

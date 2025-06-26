@@ -73,17 +73,46 @@ function Task() {
   };
 
   return (
-    <Box minHeight="100vh" width="100%" sx={{ background: "#ecf0f1", py: 4 }}>
-      <Container maxWidth="md" sx={{ bgcolor: "#fff", p: 4, borderRadius: 3 }}>
+    <Box
+      minHeight="100vh"
+      maxWidth="100%"
+      sx={{
+        background: "linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)",
+        py: 4,
+        px: { xs: 2, sm: 4 },
+      }}
+    >
+      <Container
+        maxWidth="md"
+        sx={{
+          width: "100%",
+          bgcolor: "#FAFAFA",
+          py: 4,
+          px: { xs: 2, sm: 4 },
+          borderRadius: 3,
+          boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+        }}
+      >
         <Box mb={3} textAlign="center">
-          <Typography variant="h4" fontWeight={700} gutterBottom>
+          <Typography
+            variant="h4"
+            fontWeight={700}
+            gutterBottom
+            color="#0D47A1"
+          >
             📋 Mening Vazifalarim
           </Typography>
-          <Typography color="textSecondary">
+          <Typography color="#607D8B">
             Kundalik ishlaringizni rejalang va kuzating
           </Typography>
         </Box>
-        <Box display="flex" gap={2} mb={3}>
+
+        <Box
+          display="flex"
+          flexDirection={{ xs: "column", sm: "row" }}
+          gap={2}
+          mb={3}
+        >
           <TextField
             label="Yangi vazifa"
             fullWidth
@@ -92,26 +121,34 @@ function Task() {
             variant="outlined"
             size="small"
           />
-          {editId ? (
-            <>
-              <SaveButton onClick={handleAddOrUpdate} />
-              <Button
-                variant="outlined"
-                color="inherit"
-                size="small"
-                onClick={handleCancel}
-              >
-                Bekor
-              </Button>
-            </>
-          ) : (
-            <AddButton onClick={handleAddOrUpdate} />
-          )}
+          <Box
+            display="flex"
+            gap={1}
+            flexDirection={{ xs: "column", sm: "row" }}
+            width={{ xs: "100%", sm: "auto" }}
+          >
+            {editId ? (
+              <>
+                <SaveButton onClick={handleAddOrUpdate} fullWidth />
+                <Button
+                  variant="outlined"
+                  color="inherit"
+                  size="small"
+                  onClick={handleCancel}
+                  fullWidth
+                >
+                  Bekor
+                </Button>
+              </>
+            ) : (
+              <AddButton onClick={handleAddOrUpdate} fullWidth />
+            )}
+          </Box>
         </Box>
 
         <Box sx={{ maxHeight: 400, overflowY: "auto" }}>
           {todolists.length === 0 ? (
-            <Typography color="textSecondary">
+            <Typography color="#9E9E9E" textAlign="center">
               Hozircha vazifalar yo‘q
             </Typography>
           ) : (
@@ -122,32 +159,47 @@ function Task() {
                   sx={{
                     p: 2,
                     mb: 2,
+                    bgcolor: "#fff",
                     borderLeft: `4px solid ${
-                      todo.done ? "#4caf50" : "#1976d2"
+                      todo.done ? "#4CAF50" : "#0D47A1"
                     }`,
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
                   }}
                 >
                   <Typography
                     sx={{
                       textDecoration: todo.done ? "line-through" : "none",
-                      color: todo.done ? "#777" : "#000",
+                      color: todo.done ? "#9E9E9E" : "#212121",
                       fontSize: "17px",
                       fontWeight: 500,
                     }}
                   >
                     {index + 1}. {todo.title}
                   </Typography>
-                  <Box display="flex" gap={1} mt={2}>
-                    <RemoveButton onClick={() => handleRemove(todo.id)} />
+                  <Box
+                    display="flex"
+                    flexDirection={{ xs: "column", sm: "row" }}
+                    gap={1}
+                    mt={2}
+                  >
+                    <RemoveButton
+                      onClick={() => handleRemove(todo.id)}
+                      fullWidth
+                    />
                     <Button
                       size="small"
                       variant={todo.done ? "contained" : "outlined"}
-                      color={todo.done ? "success" : "inherit"}
+                      color={todo.done ? "success" : "primary"}
                       onClick={() => handleToggleDone(todo.id)}
+                      fullWidth
                     >
                       {todo.done ? "Bajarildi" : "Bajarilmagan"}
                     </Button>
-                    <Button size="small" onClick={() => handleEdit(todo)}>
+                    <Button
+                      size="small"
+                      onClick={() => handleEdit(todo)}
+                      fullWidth
+                    >
                       Tahrirlash
                     </Button>
                   </Box>
