@@ -8,7 +8,7 @@ function LoginLayout() {
     document.body.style.boxSizing = "border-box";
   }, []);
   return (
-    <Box sx={{ display: "flex", minHeight: "100vh" }}>
+    <Box sx={{ display: "flex", minHeight: "80vh" }}>
       <Box
         sx={{
           flex: 1,
@@ -17,22 +17,21 @@ function LoginLayout() {
           justifyContent: "center",
           background:
             "linear-gradient(rgba(249, 250, 251, 0.88), rgba(249, 250, 251, 0.88))",
-          padding: 5,
         }}
       >
         <Box
           component="img"
           src="/dashboard.svg"
           sx={{
-            width: "80%",
-            maxWidth: "600px",
+            width: "100%",
+            maxWidth: "800px",
           }}
         />
       </Box>
 
       <Box
         sx={{
-          width: { xs: "100%", md: "450px" },
+          width: { xs: "100%", md: "550px" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
