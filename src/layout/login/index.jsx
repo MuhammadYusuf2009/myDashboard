@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 function LoginLayout() {
-
   return (
     <Box sx={{ display: "flex", minHeight: "80vh" }}>
       <Box
@@ -20,6 +19,10 @@ function LoginLayout() {
           sx={{
             width: "100%",
             maxWidth: "800px",
+            userSelect: "none",
+            WebkitUserSelect: "none",
+            MozUserSelect: "none",
+            WebkitUserDrag: "none",
           }}
         />
       </Box>
