@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 function LoginLayout() {
   return (
-    <Box sx={{ display: "flex", minHeight: "80vh" }}>
+    <Box sx={{ display: "flex", height: "100vh" }}>
       <Box
         sx={{
           flex: 1,

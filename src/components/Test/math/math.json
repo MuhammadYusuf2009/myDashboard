@@ -1,0 +1,1402 @@
+[
+  {
+    "id": 1,
+    "daraja": "ortacha",
+    "savol": "6 × 6 = ?",
+    "variantlar": ["37", "35", "36", "39"],
+    "javob": "36"
+  },
+  {
+    "id": 2,
+    "daraja": "qiyin",
+    "savol": "Agar x + 8 = 13, x = ?",
+    "variantlar": ["5", "6", "8", "2"],
+    "javob": "5"
+  },
+  {
+    "id": 3,
+    "daraja": "oson",
+    "savol": "9 + 7 = ?",
+    "variantlar": ["15", "18", "14", "16"],
+    "javob": "16"
+  },
+  {
+    "id": 4,
+    "daraja": "oson",
+    "savol": "17 + 4 = ?",
+    "variantlar": ["21", "24", "22", "20"],
+    "javob": "21"
+  },
+  {
+    "id": 5,
+    "daraja": "qiyin",
+    "savol": "Agar x + 4 = 10, x = ?",
+    "variantlar": ["6", "5", "4", "3"],
+    "javob": "6"
+  },
+  {
+    "id": 6,
+    "daraja": "qiyin",
+    "savol": "Agar x + 10 = 17, x = ?",
+    "variantlar": ["7", "10", "8", "6"],
+    "javob": "7"
+  },
+  {
+    "id": 7,
+    "daraja": "oson",
+    "savol": "11 + 8 = ?",
+    "variantlar": ["20", "21", "22", "19"],
+    "javob": "19"
+  },
+  {
+    "id": 8,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 8, x = ?",
+    "variantlar": ["2", "5", "4", "3"],
+    "javob": "2"
+  },
+  {
+    "id": 9,
+    "daraja": "oson",
+    "savol": "3 + 12 = ?",
+    "variantlar": ["15", "18", "12", "16"],
+    "javob": "15"
+  },
+  {
+    "id": 10,
+    "daraja": "oson",
+    "savol": "16 + 18 = ?",
+    "variantlar": ["31", "35", "33", "34"],
+    "javob": "34"
+  },
+  {
+    "id": 11,
+    "daraja": "qiyin",
+    "savol": "Agar x + 1 = 8, x = ?",
+    "variantlar": ["4", "9", "8", "7"],
+    "javob": "7"
+  },
+  {
+    "id": 12,
+    "daraja": "oson",
+    "savol": "4 + 16 = ?",
+    "variantlar": ["19", "22", "20", "21"],
+    "javob": "20"
+  },
+  {
+    "id": 13,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 7, x = ?",
+    "variantlar": ["5", "2", "4", "3"],
+    "javob": "5"
+  },
+  {
+    "id": 14,
+    "daraja": "qiyin",
+    "savol": "Agar x + 3 = 6, x = ?",
+    "variantlar": ["1", "5", "4", "3"],
+    "javob": "3"
+  },
+  {
+    "id": 15,
+    "daraja": "qiyin",
+    "savol": "Agar x + 5 = 10, x = ?",
+    "variantlar": ["5", "3", "7", "4"],
+    "javob": "5"
+  },
+  {
+    "id": 16,
+    "daraja": "ortacha",
+    "savol": "11 × 4 = ?",
+    "variantlar": ["47", "44", "46", "43"],
+    "javob": "44"
+  },
+  {
+    "id": 17,
+    "daraja": "ortacha",
+    "savol": "4 × 9 = ?",
+    "variantlar": ["37", "36", "33", "38"],
+    "javob": "36"
+  },
+  {
+    "id": 18,
+    "daraja": "qiyin",
+    "savol": "Agar x + 7 = 14, x = ?",
+    "variantlar": ["5", "7", "6", "4"],
+    "javob": "7"
+  },
+  {
+    "id": 19,
+    "daraja": "oson",
+    "savol": "5 + 11 = ?",
+    "variantlar": ["16", "14", "19", "18"],
+    "javob": "16"
+  },
+  {
+    "id": 20,
+    "daraja": "qiyin",
+    "savol": "Agar x + 8 = 17, x = ?",
+    "variantlar": ["8", "10", "11", "9"],
+    "javob": "9"
+  },
+  {
+    "id": 21,
+    "daraja": "ortacha",
+    "savol": "8 × 4 = ?",
+    "variantlar": ["34", "35", "31", "32"],
+    "javob": "32"
+  },
+  {
+    "id": 22,
+    "daraja": "oson",
+    "savol": "2 + 13 = ?",
+    "variantlar": ["16", "15", "12", "13"],
+    "javob": "15"
+  },
+  {
+    "id": 23,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 16, x = ?",
+    "variantlar": ["10", "11", "9", "13"],
+    "javob": "10"
+  },
+  {
+    "id": 24,
+    "daraja": "ortacha",
+    "savol": "3 × 4 = ?",
+    "variantlar": ["10", "11", "12", "15"],
+    "javob": "12"
+  },
+  {
+    "id": 25,
+    "daraja": "ortacha",
+    "savol": "9 × 12 = ?",
+    "variantlar": ["110", "108", "105", "107"],
+    "javob": "108"
+  },
+  {
+    "id": 26,
+    "daraja": "oson",
+    "savol": "14 + 13 = ?",
+    "variantlar": ["27", "25", "29", "26"],
+    "javob": "27"
+  },
+  {
+    "id": 27,
+    "daraja": "qiyin",
+    "savol": "Agar x + 10 = 15, x = ?",
+    "variantlar": ["8", "6", "5", "4"],
+    "javob": "5"
+  },
+  {
+    "id": 28,
+    "daraja": "oson",
+    "savol": "19 + 6 = ?",
+    "variantlar": ["26", "23", "25", "28"],
+    "javob": "25"
+  },
+  {
+    "id": 29,
+    "daraja": "qiyin",
+    "savol": "Agar x + 1 = 5, x = ?",
+    "variantlar": ["4", "5", "7", "6"],
+    "javob": "4"
+  },
+  {
+    "id": 30,
+    "daraja": "oson",
+    "savol": "19 + 2 = ?",
+    "variantlar": ["21", "24", "19", "23"],
+    "javob": "21"
+  },
+  {
+    "id": 31,
+    "daraja": "ortacha",
+    "savol": "11 × 9 = ?",
+    "variantlar": ["98", "99", "101", "97"],
+    "javob": "99"
+  },
+  {
+    "id": 32,
+    "daraja": "ortacha",
+    "savol": "12 × 2 = ?",
+    "variantlar": ["22", "27", "25", "24"],
+    "javob": "24"
+  },
+  {
+    "id": 33,
+    "daraja": "ortacha",
+    "savol": "9 × 10 = ?",
+    "variantlar": ["89", "87", "91", "90"],
+    "javob": "90"
+  },
+  {
+    "id": 34,
+    "daraja": "ortacha",
+    "savol": "6 × 6 = ?",
+    "variantlar": ["34", "39", "36", "37"],
+    "javob": "36"
+  },
+  {
+    "id": 35,
+    "daraja": "ortacha",
+    "savol": "5 × 9 = ?",
+    "variantlar": ["45", "47", "43", "42"],
+    "javob": "45"
+  },
+  {
+    "id": 36,
+    "daraja": "ortacha",
+    "savol": "9 × 7 = ?",
+    "variantlar": ["62", "61", "63", "65"],
+    "javob": "63"
+  },
+  {
+    "id": 37,
+    "daraja": "oson",
+    "savol": "3 + 3 = ?",
+    "variantlar": ["6", "3", "4", "8"],
+    "javob": "6"
+  },
+  {
+    "id": 38,
+    "daraja": "ortacha",
+    "savol": "6 × 10 = ?",
+    "variantlar": ["60", "59", "61", "57"],
+    "javob": "60"
+  },
+  {
+    "id": 39,
+    "daraja": "ortacha",
+    "savol": "5 × 3 = ?",
+    "variantlar": ["17", "15", "12", "14"],
+    "javob": "15"
+  },
+  {
+    "id": 40,
+    "daraja": "ortacha",
+    "savol": "4 × 6 = ?",
+    "variantlar": ["21", "25", "26", "24"],
+    "javob": "24"
+  },
+  {
+    "id": 41,
+    "daraja": "ortacha",
+    "savol": "6 × 12 = ?",
+    "variantlar": ["73", "72", "69", "70"],
+    "javob": "72"
+  },
+  {
+    "id": 42,
+    "daraja": "qiyin",
+    "savol": "Agar x + 7 = 8, x = ?",
+    "variantlar": ["4", "1", "2", "3"],
+    "javob": "1"
+  },
+  {
+    "id": 43,
+    "daraja": "ortacha",
+    "savol": "12 × 6 = ?",
+    "variantlar": ["73", "75", "69", "72"],
+    "javob": "72"
+  },
+  {
+    "id": 44,
+    "daraja": "qiyin",
+    "savol": "Agar x + 8 = 13, x = ?",
+    "variantlar": ["4", "5", "6", "8"],
+    "javob": "5"
+  },
+  {
+    "id": 45,
+    "daraja": "oson",
+    "savol": "10 + 19 = ?",
+    "variantlar": ["29", "31", "32", "30"],
+    "javob": "29"
+  },
+  {
+    "id": 46,
+    "daraja": "ortacha",
+    "savol": "5 × 2 = ?",
+    "variantlar": ["9", "11", "10", "7"],
+    "javob": "10"
+  },
+  {
+    "id": 47,
+    "daraja": "qiyin",
+    "savol": "Agar x + 3 = 6, x = ?",
+    "variantlar": ["5", "3", "4", "1"],
+    "javob": "3"
+  },
+  {
+    "id": 48,
+    "daraja": "ortacha",
+    "savol": "8 × 9 = ?",
+    "variantlar": ["72", "75", "69", "70"],
+    "javob": "72"
+  },
+  {
+    "id": 49,
+    "daraja": "oson",
+    "savol": "9 + 6 = ?",
+    "variantlar": ["17", "15", "16", "14"],
+    "javob": "15"
+  },
+  {
+    "id": 50,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 4, x = ?",
+    "variantlar": ["4", "3", "5", "2"],
+    "javob": "2"
+  },
+  {
+    "id": 51,
+    "daraja": "qiyin",
+    "savol": "Agar x + 7 = 16, x = ?",
+    "variantlar": ["11", "6", "8", "9"],
+    "javob": "9"
+  },
+  {
+    "id": 52,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 10, x = ?",
+    "variantlar": ["9", "8", "10", "11"],
+    "javob": "8"
+  },
+  {
+    "id": 53,
+    "daraja": "ortacha",
+    "savol": "7 × 11 = ?",
+    "variantlar": ["79", "77", "78", "80"],
+    "javob": "77"
+  },
+  {
+    "id": 54,
+    "daraja": "qiyin",
+    "savol": "Agar x + 3 = 9, x = ?",
+    "variantlar": ["6", "3", "7", "8"],
+    "javob": "6"
+  },
+  {
+    "id": 55,
+    "daraja": "ortacha",
+    "savol": "5 × 9 = ?",
+    "variantlar": ["46", "42", "45", "43"],
+    "javob": "45"
+  },
+  {
+    "id": 56,
+    "daraja": "oson",
+    "savol": "9 + 12 = ?",
+    "variantlar": ["21", "23", "22", "19"],
+    "javob": "21"
+  },
+  {
+    "id": 57,
+    "daraja": "oson",
+    "savol": "9 + 10 = ?",
+    "variantlar": ["18", "22", "19", "17"],
+    "javob": "19"
+  },
+  {
+    "id": 58,
+    "daraja": "oson",
+    "savol": "8 + 7 = ?",
+    "variantlar": ["16", "15", "17", "18"],
+    "javob": "15"
+  },
+  {
+    "id": 59,
+    "daraja": "oson",
+    "savol": "18 + 14 = ?",
+    "variantlar": ["33", "35", "32", "31"],
+    "javob": "32"
+  },
+  {
+    "id": 60,
+    "daraja": "ortacha",
+    "savol": "9 × 10 = ?",
+    "variantlar": ["90", "91", "87", "89"],
+    "javob": "90"
+  },
+  {
+    "id": 61,
+    "daraja": "oson",
+    "savol": "1 + 19 = ?",
+    "variantlar": ["20", "19", "18", "17"],
+    "javob": "20"
+  },
+  {
+    "id": 62,
+    "daraja": "ortacha",
+    "savol": "5 × 4 = ?",
+    "variantlar": ["22", "20", "17", "18"],
+    "javob": "20"
+  },
+  {
+    "id": 63,
+    "daraja": "oson",
+    "savol": "14 + 13 = ?",
+    "variantlar": ["24", "26", "27", "25"],
+    "javob": "27"
+  },
+  {
+    "id": 64,
+    "daraja": "qiyin",
+    "savol": "Agar x + 5 = 6, x = ?",
+    "variantlar": ["4", "2", "3", "1"],
+    "javob": "1"
+  },
+  {
+    "id": 65,
+    "daraja": "ortacha",
+    "savol": "6 × 3 = ?",
+    "variantlar": ["19", "15", "18", "17"],
+    "javob": "18"
+  },
+  {
+    "id": 66,
+    "daraja": "ortacha",
+    "savol": "8 × 11 = ?",
+    "variantlar": ["85", "90", "89", "88"],
+    "javob": "88"
+  },
+  {
+    "id": 67,
+    "daraja": "ortacha",
+    "savol": "5 × 2 = ?",
+    "variantlar": ["9", "13", "10", "11"],
+    "javob": "10"
+  },
+  {
+    "id": 68,
+    "daraja": "qiyin",
+    "savol": "Agar x + 8 = 9, x = ?",
+    "variantlar": ["4", "1", "2", "3"],
+    "javob": "1"
+  },
+  {
+    "id": 69,
+    "daraja": "oson",
+    "savol": "5 + 12 = ?",
+    "variantlar": ["20", "15", "19", "17"],
+    "javob": "17"
+  },
+  {
+    "id": 70,
+    "daraja": "oson",
+    "savol": "17 + 17 = ?",
+    "variantlar": ["34", "33", "32", "36"],
+    "javob": "34"
+  },
+  {
+    "id": 71,
+    "daraja": "ortacha",
+    "savol": "7 × 4 = ?",
+    "variantlar": ["27", "31", "25", "28"],
+    "javob": "28"
+  },
+  {
+    "id": 72,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 3, x = ?",
+    "variantlar": ["1", "2", "3", "4"],
+    "javob": "1"
+  },
+  {
+    "id": 73,
+    "daraja": "oson",
+    "savol": "7 + 4 = ?",
+    "variantlar": ["10", "8", "9", "11"],
+    "javob": "11"
+  },
+  {
+    "id": 74,
+    "daraja": "oson",
+    "savol": "11 + 14 = ?",
+    "variantlar": ["27", "24", "25", "28"],
+    "javob": "25"
+  },
+  {
+    "id": 75,
+    "daraja": "qiyin",
+    "savol": "Agar x + 9 = 11, x = ?",
+    "variantlar": ["4", "2", "1", "5"],
+    "javob": "2"
+  },
+  {
+    "id": 76,
+    "daraja": "qiyin",
+    "savol": "Agar x + 5 = 12, x = ?",
+    "variantlar": ["6", "10", "7", "9"],
+    "javob": "7"
+  },
+  {
+    "id": 77,
+    "daraja": "oson",
+    "savol": "16 + 10 = ?",
+    "variantlar": ["26", "24", "25", "27"],
+    "javob": "26"
+  },
+  {
+    "id": 78,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 10, x = ?",
+    "variantlar": ["8", "11", "9", "10"],
+    "javob": "8"
+  },
+  {
+    "id": 79,
+    "daraja": "qiyin",
+    "savol": "Agar x + 8 = 15, x = ?",
+    "variantlar": ["4", "10", "5", "7"],
+    "javob": "7"
+  },
+  {
+    "id": 80,
+    "daraja": "ortacha",
+    "savol": "6 × 10 = ?",
+    "variantlar": ["60", "58", "57", "61"],
+    "javob": "60"
+  },
+  {
+    "id": 81,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 10, x = ?",
+    "variantlar": ["4", "6", "7", "5"],
+    "javob": "4"
+  },
+  {
+    "id": 82,
+    "daraja": "ortacha",
+    "savol": "5 × 4 = ?",
+    "variantlar": ["22", "21", "20", "17"],
+    "javob": "20"
+  },
+  {
+    "id": 83,
+    "daraja": "ortacha",
+    "savol": "3 × 8 = ?",
+    "variantlar": ["23", "27", "25", "24"],
+    "javob": "24"
+  },
+  {
+    "id": 84,
+    "daraja": "oson",
+    "savol": "16 + 5 = ?",
+    "variantlar": ["20", "24", "21", "19"],
+    "javob": "21"
+  },
+  {
+    "id": 85,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 7, x = ?",
+    "variantlar": ["2", "1", "4", "3"],
+    "javob": "1"
+  },
+  {
+    "id": 86,
+    "daraja": "qiyin",
+    "savol": "Agar x + 7 = 15, x = ?",
+    "variantlar": ["5", "10", "8", "11"],
+    "javob": "8"
+  },
+  {
+    "id": 87,
+    "daraja": "qiyin",
+    "savol": "Agar x + 5 = 14, x = ?",
+    "variantlar": ["10", "9", "11", "8"],
+    "javob": "9"
+  },
+  {
+    "id": 88,
+    "daraja": "qiyin",
+    "savol": "Agar x + 10 = 14, x = ?",
+    "variantlar": ["4", "6", "2", "5"],
+    "javob": "4"
+  },
+  {
+    "id": 89,
+    "daraja": "oson",
+    "savol": "7 + 14 = ?",
+    "variantlar": ["18", "19", "22", "21"],
+    "javob": "21"
+  },
+  {
+    "id": 90,
+    "daraja": "ortacha",
+    "savol": "6 × 4 = ?",
+    "variantlar": ["21", "24", "25", "26"],
+    "javob": "24"
+  },
+  {
+    "id": 91,
+    "daraja": "ortacha",
+    "savol": "11 × 10 = ?",
+    "variantlar": ["111", "110", "108", "112"],
+    "javob": "110"
+  },
+  {
+    "id": 92,
+    "daraja": "ortacha",
+    "savol": "11 × 12 = ?",
+    "variantlar": ["131", "132", "134", "135"],
+    "javob": "132"
+  },
+  {
+    "id": 93,
+    "daraja": "oson",
+    "savol": "11 + 10 = ?",
+    "variantlar": ["21", "22", "23", "20"],
+    "javob": "21"
+  },
+  {
+    "id": 94,
+    "daraja": "ortacha",
+    "savol": "6 × 11 = ?",
+    "variantlar": ["64", "65", "68", "66"],
+    "javob": "66"
+  },
+  {
+    "id": 95,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 7, x = ?",
+    "variantlar": ["2", "3", "4", "1"],
+    "javob": "1"
+  },
+  {
+    "id": 96,
+    "daraja": "oson",
+    "savol": "10 + 14 = ?",
+    "variantlar": ["25", "24", "21", "26"],
+    "javob": "24"
+  },
+  {
+    "id": 97,
+    "daraja": "oson",
+    "savol": "13 + 4 = ?",
+    "variantlar": ["16", "14", "19", "17"],
+    "javob": "17"
+  },
+  {
+    "id": 98,
+    "daraja": "ortacha",
+    "savol": "3 × 10 = ?",
+    "variantlar": ["32", "33", "29", "30"],
+    "javob": "30"
+  },
+  {
+    "id": 99,
+    "daraja": "qiyin",
+    "savol": "Agar x + 3 = 4, x = ?",
+    "variantlar": ["1", "2", "3", "4"],
+    "javob": "1"
+  },
+  {
+    "id": 100,
+    "daraja": "oson",
+    "savol": "9 + 13 = ?",
+    "variantlar": ["25", "22", "19", "24"],
+    "javob": "22"
+  },
+  {
+    "id": 101,
+    "daraja": "oson",
+    "savol": "15 + 14 = ?",
+    "variantlar": ["28", "29", "27", "26"],
+    "javob": "29"
+  },
+  {
+    "id": 102,
+    "daraja": "oson",
+    "savol": "16 + 8 = ?",
+    "variantlar": ["24", "22", "26", "27"],
+    "javob": "24"
+  },
+  {
+    "id": 103,
+    "daraja": "qiyin",
+    "savol": "Agar x + 9 = 13, x = ?",
+    "variantlar": ["3", "7", "4", "5"],
+    "javob": "4"
+  },
+  {
+    "id": 104,
+    "daraja": "ortacha",
+    "savol": "11 × 10 = ?",
+    "variantlar": ["111", "108", "110", "112"],
+    "javob": "110"
+  },
+  {
+    "id": 105,
+    "daraja": "oson",
+    "savol": "3 + 13 = ?",
+    "variantlar": ["16", "17", "14", "19"],
+    "javob": "16"
+  },
+  {
+    "id": 106,
+    "daraja": "ortacha",
+    "savol": "5 × 3 = ?",
+    "variantlar": ["15", "16", "12", "18"],
+    "javob": "15"
+  },
+  {
+    "id": 107,
+    "daraja": "qiyin",
+    "savol": "Agar x + 8 = 12, x = ?",
+    "variantlar": ["6", "3", "7", "4"],
+    "javob": "4"
+  },
+  {
+    "id": 108,
+    "daraja": "qiyin",
+    "savol": "Agar x + 3 = 12, x = ?",
+    "variantlar": ["6", "8", "9", "11"],
+    "javob": "9"
+  },
+  {
+    "id": 109,
+    "daraja": "ortacha",
+    "savol": "8 × 8 = ?",
+    "variantlar": ["66", "65", "67", "64"],
+    "javob": "64"
+  },
+  {
+    "id": 110,
+    "daraja": "oson",
+    "savol": "16 + 16 = ?",
+    "variantlar": ["34", "29", "30", "32"],
+    "javob": "32"
+  },
+  {
+    "id": 111,
+    "daraja": "qiyin",
+    "savol": "Agar x + 7 = 15, x = ?",
+    "variantlar": ["8", "7", "11", "10"],
+    "javob": "8"
+  },
+  {
+    "id": 112,
+    "daraja": "oson",
+    "savol": "13 + 19 = ?",
+    "variantlar": ["32", "29", "33", "34"],
+    "javob": "32"
+  },
+  {
+    "id": 113,
+    "daraja": "ortacha",
+    "savol": "12 × 8 = ?",
+    "variantlar": ["99", "96", "97", "94"],
+    "javob": "96"
+  },
+  {
+    "id": 114,
+    "daraja": "oson",
+    "savol": "1 + 13 = ?",
+    "variantlar": ["16", "14", "11", "13"],
+    "javob": "14"
+  },
+  {
+    "id": 115,
+    "daraja": "oson",
+    "savol": "5 + 19 = ?",
+    "variantlar": ["22", "24", "27", "26"],
+    "javob": "24"
+  },
+  {
+    "id": 116,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 5, x = ?",
+    "variantlar": ["2", "3", "6", "5"],
+    "javob": "3"
+  },
+  {
+    "id": 117,
+    "daraja": "qiyin",
+    "savol": "Agar x + 1 = 8, x = ?",
+    "variantlar": ["7", "4", "10", "8"],
+    "javob": "7"
+  },
+  {
+    "id": 118,
+    "daraja": "oson",
+    "savol": "2 + 15 = ?",
+    "variantlar": ["17", "16", "14", "20"],
+    "javob": "17"
+  },
+  {
+    "id": 119,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 12, x = ?",
+    "variantlar": ["12", "10", "11", "8"],
+    "javob": "10"
+  },
+  {
+    "id": 120,
+    "daraja": "ortacha",
+    "savol": "7 × 4 = ?",
+    "variantlar": ["26", "28", "27", "29"],
+    "javob": "28"
+  },
+  {
+    "id": 121,
+    "daraja": "ortacha",
+    "savol": "2 × 5 = ?",
+    "variantlar": ["10", "13", "7", "11"],
+    "javob": "10"
+  },
+  {
+    "id": 122,
+    "daraja": "oson",
+    "savol": "10 + 3 = ?",
+    "variantlar": ["10", "12", "13", "15"],
+    "javob": "13"
+  },
+  {
+    "id": 123,
+    "daraja": "ortacha",
+    "savol": "8 × 3 = ?",
+    "variantlar": ["23", "24", "27", "25"],
+    "javob": "24"
+  },
+  {
+    "id": 124,
+    "daraja": "oson",
+    "savol": "10 + 11 = ?",
+    "variantlar": ["24", "20", "21", "19"],
+    "javob": "21"
+  },
+  {
+    "id": 125,
+    "daraja": "ortacha",
+    "savol": "8 × 5 = ?",
+    "variantlar": ["43", "40", "37", "38"],
+    "javob": "40"
+  },
+  {
+    "id": 126,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 12, x = ?",
+    "variantlar": ["8", "10", "13", "12"],
+    "javob": "10"
+  },
+  {
+    "id": 127,
+    "daraja": "oson",
+    "savol": "18 + 2 = ?",
+    "variantlar": ["19", "22", "20", "21"],
+    "javob": "20"
+  },
+  {
+    "id": 128,
+    "daraja": "ortacha",
+    "savol": "5 × 12 = ?",
+    "variantlar": ["57", "63", "60", "59"],
+    "javob": "60"
+  },
+  {
+    "id": 129,
+    "daraja": "oson",
+    "savol": "8 + 8 = ?",
+    "variantlar": ["16", "15", "14", "13"],
+    "javob": "16"
+  },
+  {
+    "id": 130,
+    "daraja": "qiyin",
+    "savol": "Agar x + 4 = 6, x = ?",
+    "variantlar": ["5", "3", "2", "1"],
+    "javob": "2"
+  },
+  {
+    "id": 131,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 6, x = ?",
+    "variantlar": ["4", "2", "5", "3"],
+    "javob": "4"
+  },
+  {
+    "id": 132,
+    "daraja": "oson",
+    "savol": "11 + 11 = ?",
+    "variantlar": ["21", "22", "23", "24"],
+    "javob": "22"
+  },
+  {
+    "id": 133,
+    "daraja": "ortacha",
+    "savol": "12 × 3 = ?",
+    "variantlar": ["36", "34", "35", "37"],
+    "javob": "36"
+  },
+  {
+    "id": 134,
+    "daraja": "oson",
+    "savol": "14 + 20 = ?",
+    "variantlar": ["31", "34", "32", "35"],
+    "javob": "34"
+  },
+  {
+    "id": 135,
+    "daraja": "oson",
+    "savol": "19 + 11 = ?",
+    "variantlar": ["33", "29", "30", "28"],
+    "javob": "30"
+  },
+  {
+    "id": 136,
+    "daraja": "qiyin",
+    "savol": "Agar x + 10 = 12, x = ?",
+    "variantlar": ["1", "3", "2", "5"],
+    "javob": "2"
+  },
+  {
+    "id": 137,
+    "daraja": "ortacha",
+    "savol": "8 × 3 = ?",
+    "variantlar": ["22", "26", "27", "24"],
+    "javob": "24"
+  },
+  {
+    "id": 138,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 13, x = ?",
+    "variantlar": ["5", "9", "7", "8"],
+    "javob": "7"
+  },
+  {
+    "id": 139,
+    "daraja": "ortacha",
+    "savol": "9 × 11 = ?",
+    "variantlar": ["101", "99", "97", "98"],
+    "javob": "99"
+  },
+  {
+    "id": 140,
+    "daraja": "oson",
+    "savol": "13 + 10 = ?",
+    "variantlar": ["20", "21", "23", "26"],
+    "javob": "23"
+  },
+  {
+    "id": 141,
+    "daraja": "qiyin",
+    "savol": "Agar x + 1 = 10, x = ?",
+    "variantlar": ["6", "11", "12", "9"],
+    "javob": "9"
+  },
+  {
+    "id": 142,
+    "daraja": "oson",
+    "savol": "10 + 17 = ?",
+    "variantlar": ["27", "26", "25", "24"],
+    "javob": "27"
+  },
+  {
+    "id": 143,
+    "daraja": "ortacha",
+    "savol": "5 × 6 = ?",
+    "variantlar": ["32", "27", "30", "29"],
+    "javob": "30"
+  },
+  {
+    "id": 144,
+    "daraja": "ortacha",
+    "savol": "7 × 7 = ?",
+    "variantlar": ["46", "49", "47", "52"],
+    "javob": "49"
+  },
+  {
+    "id": 145,
+    "daraja": "qiyin",
+    "savol": "Agar x + 9 = 17, x = ?",
+    "variantlar": ["5", "6", "10", "8"],
+    "javob": "8"
+  },
+  {
+    "id": 146,
+    "daraja": "oson",
+    "savol": "11 + 9 = ?",
+    "variantlar": ["22", "21", "19", "20"],
+    "javob": "20"
+  },
+  {
+    "id": 147,
+    "daraja": "oson",
+    "savol": "13 + 11 = ?",
+    "variantlar": ["26", "27", "23", "24"],
+    "javob": "24"
+  },
+  {
+    "id": 148,
+    "daraja": "qiyin",
+    "savol": "Agar x + 9 = 11, x = ?",
+    "variantlar": ["2", "3", "1", "5"],
+    "javob": "2"
+  },
+  {
+    "id": 149,
+    "daraja": "ortacha",
+    "savol": "9 × 2 = ?",
+    "variantlar": ["15", "18", "17", "20"],
+    "javob": "18"
+  },
+  {
+    "id": 150,
+    "daraja": "qiyin",
+    "savol": "Agar x + 9 = 15, x = ?",
+    "variantlar": ["8", "5", "9", "6"],
+    "javob": "6"
+  },
+  {
+    "id": 151,
+    "daraja": "ortacha",
+    "savol": "10 × 2 = ?",
+    "variantlar": ["21", "20", "18", "17"],
+    "javob": "20"
+  },
+  {
+    "id": 152,
+    "daraja": "qiyin",
+    "savol": "Agar x + 9 = 10, x = ?",
+    "variantlar": ["4", "3", "2", "1"],
+    "javob": "1"
+  },
+  {
+    "id": 153,
+    "daraja": "qiyin",
+    "savol": "Agar x + 5 = 14, x = ?",
+    "variantlar": ["10", "7", "9", "12"],
+    "javob": "9"
+  },
+  {
+    "id": 154,
+    "daraja": "qiyin",
+    "savol": "Agar x + 4 = 8, x = ?",
+    "variantlar": ["7", "4", "2", "6"],
+    "javob": "4"
+  },
+  {
+    "id": 155,
+    "daraja": "qiyin",
+    "savol": "Agar x + 4 = 8, x = ?",
+    "variantlar": ["2", "1", "4", "3"],
+    "javob": "4"
+  },
+  {
+    "id": 156,
+    "daraja": "qiyin",
+    "savol": "Agar x + 1 = 7, x = ?",
+    "variantlar": ["6", "7", "5", "8"],
+    "javob": "6"
+  },
+  {
+    "id": 157,
+    "daraja": "ortacha",
+    "savol": "11 × 9 = ?",
+    "variantlar": ["96", "98", "99", "102"],
+    "javob": "99"
+  },
+  {
+    "id": 158,
+    "daraja": "qiyin",
+    "savol": "Agar x + 2 = 9, x = ?",
+    "variantlar": ["4", "7", "5", "8"],
+    "javob": "7"
+  },
+  {
+    "id": 159,
+    "daraja": "qiyin",
+    "savol": "Agar x + 8 = 18, x = ?",
+    "variantlar": ["10", "13", "9", "11"],
+    "javob": "10"
+  },
+  {
+    "id": 160,
+    "daraja": "qiyin",
+    "savol": "Agar x + 3 = 10, x = ?",
+    "variantlar": ["10", "7", "5", "4"],
+    "javob": "7"
+  },
+  {
+    "id": 161,
+    "daraja": "ortacha",
+    "savol": "8 × 8 = ?",
+    "variantlar": ["65", "67", "64", "62"],
+    "javob": "64"
+  },
+  {
+    "id": 162,
+    "daraja": "oson",
+    "savol": "13 + 18 = ?",
+    "variantlar": ["34", "31", "32", "33"],
+    "javob": "31"
+  },
+  {
+    "id": 163,
+    "daraja": "qiyin",
+    "savol": "Agar x + 1 = 4, x = ?",
+    "variantlar": ["6", "4", "3", "5"],
+    "javob": "3"
+  },
+  {
+    "id": 164,
+    "daraja": "ortacha",
+    "savol": "6 × 10 = ?",
+    "variantlar": ["57", "63", "60", "58"],
+    "javob": "60"
+  },
+  {
+    "id": 165,
+    "daraja": "ortacha",
+    "savol": "5 × 3 = ?",
+    "variantlar": ["12", "15", "17", "14"],
+    "javob": "15"
+  },
+  {
+    "id": 166,
+    "daraja": "oson",
+    "savol": "16 + 20 = ?",
+    "variantlar": ["36", "35", "39", "38"],
+    "javob": "36"
+  },
+  {
+    "id": 167,
+    "daraja": "ortacha",
+    "savol": "6 × 11 = ?",
+    "variantlar": ["66", "64", "68", "67"],
+    "javob": "66"
+  },
+  {
+    "id": 168,
+    "daraja": "oson",
+    "savol": "16 + 16 = ?",
+    "variantlar": ["34", "32", "31", "33"],
+    "javob": "32"
+  },
+  {
+    "id": 169,
+    "daraja": "ortacha",
+    "savol": "3 × 12 = ?",
+    "variantlar": ["33", "36", "38", "34"],
+    "javob": "36"
+  },
+  {
+    "id": 170,
+    "daraja": "qiyin",
+    "savol": "Agar x + 3 = 6, x = ?",
+    "variantlar": ["3", "6", "1", "2"],
+    "javob": "3"
+  },
+  {
+    "id": 171,
+    "daraja": "qiyin",
+    "savol": "Agar x + 8 = 16, x = ?",
+    "variantlar": ["9", "8", "7", "5"],
+    "javob": "8"
+  },
+  {
+    "id": 172,
+    "daraja": "qiyin",
+    "savol": "Agar x + 5 = 8, x = ?",
+    "variantlar": ["6", "1", "4", "3"],
+    "javob": "3"
+  },
+  {
+    "id": 173,
+    "daraja": "ortacha",
+    "savol": "5 × 3 = ?",
+    "variantlar": ["13", "17", "15", "16"],
+    "javob": "15"
+  },
+  {
+    "id": 174,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 8, x = ?",
+    "variantlar": ["3", "4", "2", "1"],
+    "javob": "2"
+  },
+  {
+    "id": 175,
+    "daraja": "oson",
+    "savol": "5 + 5 = ?",
+    "variantlar": ["10", "13", "9", "12"],
+    "javob": "10"
+  },
+  {
+    "id": 176,
+    "daraja": "ortacha",
+    "savol": "5 × 7 = ?",
+    "variantlar": ["33", "37", "34", "35"],
+    "javob": "35"
+  },
+  {
+    "id": 177,
+    "daraja": "ortacha",
+    "savol": "9 × 10 = ?",
+    "variantlar": ["90", "89", "93", "88"],
+    "javob": "90"
+  },
+  {
+    "id": 178,
+    "daraja": "ortacha",
+    "savol": "7 × 4 = ?",
+    "variantlar": ["27", "28", "26", "29"],
+    "javob": "28"
+  },
+  {
+    "id": 179,
+    "daraja": "oson",
+    "savol": "3 + 9 = ?",
+    "variantlar": ["12", "9", "11", "13"],
+    "javob": "12"
+  },
+  {
+    "id": 180,
+    "daraja": "qiyin",
+    "savol": "Agar x + 10 = 20, x = ?",
+    "variantlar": ["12", "7", "10", "9"],
+    "javob": "10"
+  },
+  {
+    "id": 181,
+    "daraja": "oson",
+    "savol": "3 + 8 = ?",
+    "variantlar": ["9", "11", "10", "13"],
+    "javob": "11"
+  },
+  {
+    "id": 182,
+    "daraja": "oson",
+    "savol": "3 + 4 = ?",
+    "variantlar": ["6", "7", "8", "4"],
+    "javob": "7"
+  },
+  {
+    "id": 183,
+    "daraja": "qiyin",
+    "savol": "Agar x + 4 = 8, x = ?",
+    "variantlar": ["4", "3", "1", "7"],
+    "javob": "4"
+  },
+  {
+    "id": 184,
+    "daraja": "oson",
+    "savol": "8 + 5 = ?",
+    "variantlar": ["14", "13", "15", "11"],
+    "javob": "13"
+  },
+  {
+    "id": 185,
+    "daraja": "qiyin",
+    "savol": "Agar x + 10 = 18, x = ?",
+    "variantlar": ["5", "10", "8", "11"],
+    "javob": "8"
+  },
+  {
+    "id": 186,
+    "daraja": "ortacha",
+    "savol": "11 × 7 = ?",
+    "variantlar": ["79", "74", "78", "77"],
+    "javob": "77"
+  },
+  {
+    "id": 187,
+    "daraja": "ortacha",
+    "savol": "2 × 12 = ?",
+    "variantlar": ["23", "21", "24", "25"],
+    "javob": "24"
+  },
+  {
+    "id": 188,
+    "daraja": "ortacha",
+    "savol": "5 × 5 = ?",
+    "variantlar": ["23", "22", "25", "26"],
+    "javob": "25"
+  },
+  {
+    "id": 189,
+    "daraja": "oson",
+    "savol": "2 + 12 = ?",
+    "variantlar": ["13", "14", "12", "15"],
+    "javob": "14"
+  },
+  {
+    "id": 190,
+    "daraja": "qiyin",
+    "savol": "Agar x + 9 = 13, x = ?",
+    "variantlar": ["4", "1", "7", "3"],
+    "javob": "4"
+  },
+  {
+    "id": 191,
+    "daraja": "ortacha",
+    "savol": "8 × 8 = ?",
+    "variantlar": ["67", "65", "64", "61"],
+    "javob": "64"
+  },
+  {
+    "id": 192,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 7, x = ?",
+    "variantlar": ["4", "2", "3", "1"],
+    "javob": "1"
+  },
+  {
+    "id": 193,
+    "daraja": "oson",
+    "savol": "10 + 16 = ?",
+    "variantlar": ["23", "24", "26", "29"],
+    "javob": "26"
+  },
+  {
+    "id": 194,
+    "daraja": "oson",
+    "savol": "16 + 8 = ?",
+    "variantlar": ["21", "26", "24", "22"],
+    "javob": "24"
+  },
+  {
+    "id": 195,
+    "daraja": "oson",
+    "savol": "12 + 1 = ?",
+    "variantlar": ["10", "12", "13", "16"],
+    "javob": "13"
+  },
+  {
+    "id": 196,
+    "daraja": "oson",
+    "savol": "7 + 5 = ?",
+    "variantlar": ["9", "10", "15", "12"],
+    "javob": "12"
+  },
+  {
+    "id": 197,
+    "daraja": "oson",
+    "savol": "8 + 18 = ?",
+    "variantlar": ["26", "28", "29", "25"],
+    "javob": "26"
+  },
+  {
+    "id": 198,
+    "daraja": "qiyin",
+    "savol": "Agar x + 6 = 11, x = ?",
+    "variantlar": ["8", "7", "5", "3"],
+    "javob": "5"
+  },
+  {
+    "id": 199,
+    "daraja": "oson",
+    "savol": "12 + 14 = ?",
+    "variantlar": ["29", "24", "25", "26"],
+    "javob": "26"
+  },
+  {
+    "id": 200,
+    "daraja": "ortacha",
+    "savol": "10 × 7 = ?",
+    "variantlar": ["72", "70", "71", "69"],
+    "javob": "70"
+  }
+]

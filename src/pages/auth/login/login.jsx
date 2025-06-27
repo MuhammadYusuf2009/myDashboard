@@ -9,7 +9,7 @@ import {
   Paper,
 } from "@mui/material";
 import { useState } from "react";
-import { Formik, Form, useFormikContext } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { MY_REGISTER_PAGE } from "../../../helpers/pages";
@@ -18,18 +18,11 @@ import { loginUser, loginWithGoogle } from "../../../firebase/firesotre/auth";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-const FormComponent = () => {
+const FormComponent = ({ handleSubmit }) => {
   const [showPassword, setShowPassword] = useState(false);
-  const { handleSubmit } = useFormikContext();
 
   return (
-    <Form
-      autoComplete="off"
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleSubmit(e);
-      }}
-    >
+    <Form autoComplete="off" onSubmit={handleSubmit}>
       <Paper
         elevation={6}
         sx={{
@@ -131,28 +124,18 @@ const FormComponent = () => {
 
 const LoginPage = () => {
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        px: 2,
-        background: "linear-gradient(135deg, #E1BEE7, #C5CAE9)",
-        width: "100%",
+    <Formik
+      initialValues={{ email: "", password: "" }}
+      validationSchema={Yup.object({
+        email: Yup.string().email("Email noto‘g‘ri").required("Email shart"),
+        password: Yup.string().required("Parol shart"),
+      })}
+      onSubmit={(values) => {
+        loginUser(values);
       }}
     >
-      <Formik
-        initialValues={{ email: "", password: "" }}
-        validationSchema={Yup.object({
-          email: Yup.string().email("Email noto‘g‘ri").required("Email shart"),
-          password: Yup.string().required("Parol shart"),
-        })}
-        onSubmit={(values) => loginUser(values)}
-      >
-        <FormComponent />
-      </Formik>
-    </Box>
+      {({ handleSubmit }) => <FormComponent handleSubmit={handleSubmit} />}
+    </Formik>
   );
 };
 
