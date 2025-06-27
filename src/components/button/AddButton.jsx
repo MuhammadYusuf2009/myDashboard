@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
-function AddButton({ onClick, children = "Qo‘shish", ...props }) {
+function AddButton({ onClick, ...props }) {
   return (
     <Button
       variant="contained"
@@ -17,7 +17,7 @@ function AddButton({ onClick, children = "Qo‘shish", ...props }) {
         textTransform: "none",
       }}
     >
-      {children}
+      Qo`shish
     </Button>
   );
 }

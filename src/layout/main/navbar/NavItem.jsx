@@ -20,9 +20,9 @@ function NavItem({ title, icon, path, children }) {
 
   const handleClose = () => setAnchorEl(null);
 
-  const activeColor = "#0D47A1"; // deep blue
-  const activeBg = "#E3F2FD"; // light blue background
-  const hoverBg = "#F5F7FA"; // soft gray
+  const activeColor = "#0D47A1";
+  const activeBg = "#E3F2FD";
+  const hoverBg = "#F5F7FA";
 
   if (children) {
     return (
@@ -76,6 +76,7 @@ function NavItem({ title, icon, path, children }) {
                 component={Link}
                 to={item.path}
                 onClick={handleClose}
+                style={{ textDecoration: "none" }}
                 sx={{
                   color: active ? activeColor : "#333",
                   fontWeight: active ? 600 : 500,
@@ -102,6 +103,7 @@ function NavItem({ title, icon, path, children }) {
       component={Link}
       to={path}
       startIcon={<Icon icon={icon} />}
+      style={{ textDecoration: "none" }}
       sx={{
         textTransform: "none",
         color: isActive ? activeColor : "#555",

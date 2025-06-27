@@ -11,13 +11,13 @@ import {
 } from "@mui/material";
 import NavList from "./NavList";
 import Logo from "../Logo";
-import LinearProgres from "../../../components/LinearProgres/LinearProgres";
+import Linear from "../../../components/Linear/Linear";
 import { useSelector } from "../../../hooks/use-selector";
-import { getProgress } from "../../../store/todolist";
+import { getProgress } from "../../../store/todo";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const isMobile = useMediaQuery("(max-width:850px)");
+  const isMobile = useMediaQuery("(max-width:900px)");
   const progress = useSelector(getProgress);
 
   const renderProgressBox = (
@@ -41,7 +41,7 @@ function Navbar() {
       >
         Vazifalar bajarilishi:
       </Typography>
-      <LinearProgres progress={progress} />
+      <Linear progress={progress} />
     </Box>
   );
 
@@ -50,10 +50,15 @@ function Navbar() {
       {isMobile ? (
         <>
           <IconButton
-            onClick={() => setOpen(!open)}
-            sx={{ position: "absolute", top: 16, left: 16, zIndex: 1300 }}
+            onClick={() => setOpen(true)}
+            sx={{
+              position: "absolute",
+              top: 16,
+              left: 16,
+              zIndex: 1300,
+            }}
           >
-            <Icon icon={open ? "mdi:close" : "mdi:menu"} width={30} />
+            <Icon icon="mdi:menu" width={30} />
           </IconButton>
 
           <Drawer
@@ -65,9 +70,21 @@ function Navbar() {
                 width: 280,
                 p: 2,
                 pt: 5,
+                position: "relative",
               },
             }}
           >
+            <IconButton
+              onClick={() => setOpen(false)}
+              sx={{
+                position: "absolute",
+                top: 16,
+                right: 16,
+              }}
+            >
+              <Icon icon="mdi:close" width={30} />
+            </IconButton>
+
             <Box sx={{ mb: 2 }}>
               <Logo />
             </Box>

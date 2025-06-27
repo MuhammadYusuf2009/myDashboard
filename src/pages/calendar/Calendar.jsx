@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Calendar, Modal, Input } from "rsuite";
+import React, { useEffect, useState } from "react";
+import { Calendar, Modal, Input, TimePicker } from "rsuite";
 import { useSelector } from "../../hooks/use-selector";
 import { useDispatch } from "../../hooks/use-dispatch";
 import { deletePlan, savePlan } from "../../store/calendars";
@@ -9,18 +9,21 @@ import BackButton from "../../components/button/BackButton";
 import RemoveButton from "../../components/button/RemoveButton";
 
 function Calendars() {
+  useEffect(() => {
+    document.body.style.overflowY = "auto";
+  });
   const today = new Date();
   const dispatch = useDispatch();
   const plans = useSelector((state) => state.plans.plans);
 
   const dayColors = {
+    0: "#B0BEC5",
     1: "#EF5350",
     2: "#FFCA28",
     3: "#66BB6A",
     4: "#9CCC65",
     5: "#42A5F5",
     6: "#90A4AE",
-    0: "#B0BEC5",
   };
 
   const [currentMonth, setCurrentMonth] = useState({
@@ -30,38 +33,73 @@ function Calendars() {
 
   const [selectedDate, setSelectedDate] = useState(null);
   const [planText, setPlanText] = useState("");
+  const [startTime, setStartTime] = useState(null);
+  const [endTime, setEndTime] = useState(null);
   const [open, setOpen] = useState(false);
 
   const getMonthKey = (date) =>
     `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
 
+  const getDayKey = (date) =>
+    `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(
+      2,
+      "0"
+    )}-${String(date.getDate()).padStart(2, "0")}`;
+
   const handleSelect = (date) => {
     const monthKey = getMonthKey(date);
-    const dayKey = date.toDateString();
+    const dayKey = getDayKey(date);
+    const currentPlan = plans[monthKey]?.[dayKey];
 
     if (
       date.getMonth() === currentMonth.month &&
       date.getFullYear() === currentMonth.year
     ) {
       setSelectedDate(date);
-      setPlanText(plans[monthKey]?.[dayKey] || "");
+      setPlanText(currentPlan?.text || "");
+      setStartTime(
+        currentPlan?.startTime
+          ? new Date(`1970-01-01T${currentPlan.startTime}`)
+          : null
+      );
+      setEndTime(
+        currentPlan?.endTime
+          ? new Date(`1970-01-01T${currentPlan.endTime}`)
+          : null
+      );
       setOpen(true);
     }
   };
+
   const handleDelete = () => {
     if (!selectedDate) return;
     const monthKey = getMonthKey(selectedDate);
-    const dayKey = selectedDate.toDateString();
+    const dayKey = getDayKey(selectedDate);
     dispatch(deletePlan({ date: dayKey, monthKey }));
     setOpen(false);
     setPlanText("");
+    setStartTime(null);
+    setEndTime(null);
   };
+
   const handleSave = () => {
+    if (!selectedDate) return;
     const monthKey = getMonthKey(selectedDate);
-    const dayKey = selectedDate.toDateString();
-    dispatch(savePlan({ date: dayKey, monthKey, text: planText }));
+    const dayKey = getDayKey(selectedDate);
+
+    dispatch(
+      savePlan({
+        date: dayKey,
+        monthKey,
+        text: planText,
+        startTime: startTime ? startTime.toTimeString().slice(0, 5) : null,
+        endTime: endTime ? endTime.toTimeString().slice(0, 5) : null,
+      })
+    );
     setOpen(false);
     setPlanText("");
+    setStartTime(null);
+    setEndTime(null);
   };
 
   const monthKey = getMonthKey(new Date(currentMonth.year, currentMonth.month));
@@ -71,12 +109,12 @@ function Calendars() {
     <div style={{ padding: 20 }}>
       <Calendar
         bordered
-        onMonthChange={(newDate) => {
+        onMonthChange={(newDate) =>
           setCurrentMonth({
             month: newDate.getMonth(),
             year: newDate.getFullYear(),
-          });
-        }}
+          })
+        }
         onSelect={handleSelect}
         renderCell={(date) => {
           const day = date.getDay();
@@ -107,11 +145,7 @@ function Calendars() {
             textAlign: "center",
           };
 
-          const hasPlan = (() => {
-            const key = getMonthKey(date);
-            const dKey = date.toDateString();
-            return plans[key] && plans[key][dKey];
-          })();
+          const hasPlan = plans[getMonthKey(date)]?.[getDayKey(date)];
 
           return (
             <div style={style}>
@@ -121,12 +155,11 @@ function Calendars() {
                     width: "6px",
                     height: "6px",
                     borderRadius: "50%",
-                    backgroundColor: "#FFEB3B",
+                    backgroundColor: "#000",
                     marginTop: "4px",
                   }}
                 />
               )}
-
               {isCurrentMonth && isToday && (
                 <div
                   style={{
@@ -149,11 +182,12 @@ function Calendars() {
 
       <Modal open={open} onClose={() => setOpen(false)}>
         <Modal.Header>
-          <Modal.Title>Reja qo‘shish</Modal.Title>
+          <Modal.Title>Reja qo‘shish / tahrirlash</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>
-            <b>{selectedDate?.toDateString()}</b> uchun reja yozing:
+            <b>{selectedDate ? getDayKey(selectedDate) : ""}</b> uchun reja
+            yozing:
           </p>
           <Input
             as="textarea"
@@ -162,11 +196,32 @@ function Calendars() {
             onChange={(value) => setPlanText(value)}
             placeholder="Reja matnini yozing..."
           />
+          <div style={{ marginTop: 10 }}>
+            <TimePicker
+              format="HH:mm"
+              value={startTime}
+              onChange={setStartTime}
+              style={{ width: "100%" }}
+              placeholder="Boshlanish vaqti"
+            />
+          </div>
+          <div style={{ marginTop: 10 }}>
+            <TimePicker
+              format="HH:mm"
+              value={endTime}
+              onChange={setEndTime}
+              style={{ width: "100%" }}
+              placeholder="Tugash vaqti"
+            />
+          </div>
         </Modal.Body>
         <Modal.Footer>
-          <SaveButton onClick={handleSave} />
-          <BackButton onClick={() => setOpen(false)} sx={{ ml: 2 }} />
+          <SaveButton
+            onClick={handleSave}
+            disabled={!planText || !startTime || !endTime}
+          />
           <RemoveButton onClick={handleDelete} sx={{ ml: 2 }} />
+          <BackButton onClick={() => setOpen(false)} sx={{ ml: 2 }} />
         </Modal.Footer>
       </Modal>
 
@@ -185,38 +240,35 @@ function Calendars() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
               gap: "8px",
               alignItems: "start",
             }}
           >
-            {Object.entries(currentMonthPlans).map(([date, text]) => (
+            {Object.entries(currentMonthPlans).map(([date, data]) => (
               <div
                 key={date}
                 style={{
                   background: "#f9f9f9",
-                  padding: "8px",
+                  padding: "10px",
                   borderRadius: "6px",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
-                  height: "100px",
                   display: "flex",
                   flexDirection: "column",
-                  overflow: "hidden",
+                  gap: "4px",
                 }}
               >
-                <strong style={{ marginBottom: "4px", fontSize: "13px" }}>
-                  {date}
-                </strong>
-                <div
-                  style={{
-                    fontSize: "13px",
-                    whiteSpace: "pre-wrap",
-                    wordBreak: "break-word",
-                    overflowY: "auto",
-                    flexGrow: 1,
-                  }}
-                >
-                  {text}
+                <div style={{ fontSize: "13px" }}>
+                  <strong>Sana:</strong> {date}
+                </div>
+                {(data.startTime || data.endTime) && (
+                  <div style={{ fontSize: "13px" }}>
+                    <strong>Vaqt:</strong> {data.startTime || "??"} dan{" "}
+                    {data.endTime || "??"} gacha
+                  </div>
+                )}
+                <div style={{ fontSize: "13px" }}>
+                  <strong>Yozuv:</strong> {data.text}
                 </div>
               </div>
             ))}

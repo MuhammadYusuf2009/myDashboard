@@ -5,7 +5,15 @@ import Navbar from "./Navbar";
 function MainLayout() {
   return (
     <Box sx={{ display: "flex", minHeight: "100vh" }}>
-      <Box sx={{ width: { xs: "auto", md: "250px" }, flexShrink: 0 }}>
+      <Box
+        sx={{
+          width: { xs: "auto", md: "250px" },
+          flexShrink: 0,
+          position: "fixed",
+          height: "100vh",
+          bgcolor: "white",
+        }}
+      >
         <Navbar />
       </Box>
 
@@ -14,6 +22,7 @@ function MainLayout() {
         sx={{
           flexGrow: 1,
           bgcolor: "#fafafa",
+          marginLeft: { xs: 0, md: "250px" },
         }}
       >
         <Outlet />

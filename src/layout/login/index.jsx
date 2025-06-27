@@ -1,12 +1,7 @@
 import { Box } from "@mui/material";
-import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 function LoginLayout() {
-  useEffect(() => {
-    document.body.style.margin = "0";
-    document.body.style.padding = "0";
-    document.body.style.boxSizing = "border-box";
-  }, []);
+
   return (
     <Box sx={{ display: "flex", minHeight: "80vh" }}>
       <Box

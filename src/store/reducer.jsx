@@ -1,6 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import App from "./app";
-import Todolist from "./todolist";
+import Todolist from "./todo";
 import planReducer from "./calendars";
 const combineRedux = combineReducers({
   App,

@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useDispatch } from "../../hooks/use-dispatch";
 import { useSelector } from "../../hooks/use-selector";
-import { todolistActions } from "../../store/todolist";
+import { todolistActions } from "../../store/todo";
 import AddButton from "../../components/button/AddButton";
 import RemoveButton from "../../components/button/RemoveButton";
 import SaveButton from "../../components/button/SaveButton";
