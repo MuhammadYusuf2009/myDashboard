@@ -22,7 +22,7 @@ const loginRoutes = {
       element: <Register />,
     },
     {
-      path: "",
+      path: "/",
       element: <Navigate replace to={MY_LOGIN_PAGE} />,
     },
     {

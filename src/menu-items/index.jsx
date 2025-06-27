@@ -4,6 +4,7 @@ import {
   MY_CALENDAR_PAGE,
   MY_STATUS_PAGE,
   MY_TASKS_PAGE,
+  MY_TESTS_PAGE,
 } from "../helpers/pages";
 
 const MenuItem = [
@@ -31,6 +32,11 @@ const MenuItem = [
     title: "Plans",
     icon: "icon-park-solid:plan",
     path: MY_PLANS_PAGE,
+  },
+  {
+    title: "Tests",
+    icon: "mdi:frequently-asked-questions",
+    path: MY_TESTS_PAGE,
   },
 ];
 

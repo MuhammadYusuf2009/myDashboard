@@ -24,7 +24,7 @@ function MainLayout() {
           bgcolor: "#fafafa",
           marginLeft: { xs: 0, md: "250px" },
         }}
-      >
+      > 
         <Outlet />
       </Box>
     </Box>

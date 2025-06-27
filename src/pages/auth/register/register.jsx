@@ -13,7 +13,7 @@ import { Formik, Form, useFormikContext } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { MY_LOGIN_PAGE } from "../../../helpers/pages";
-import FormikInput from "../../../components/inpunt/FormikInput";
+import FormikInput from "../../../components/input/FormikInput";
 import { registerUser } from "../../../firebase/firesotre/auth";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";

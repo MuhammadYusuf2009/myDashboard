@@ -4,6 +4,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./store";
 import { useEffect } from "react";
+import "rsuite/dist/rsuite.min.css";
 function App() {
   useEffect(() => {
     document.body.style.overflow = "hidden";

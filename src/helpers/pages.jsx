@@ -8,3 +8,4 @@ export const MY_STATUS_PAGE = "/stats";
 export const MY_TASKS_PAGE = "/tasks";
 
 export const MY_404_PAGE = "/error";
+export const MY_TESTS_PAGE = "/tests";

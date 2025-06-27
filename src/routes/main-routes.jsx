@@ -5,17 +5,19 @@ import {
   MY_PLANS_PAGE,
   MY_TASKS_PAGE,
   MY_STATUS_PAGE,
+  MY_TESTS_PAGE,
 } from "../helpers/pages";
 import Loadable from "../components/loadable/index";
 import AuthGuard from "../auth/auth-guard";
 import DashboardLayout from "../layout/main";
 import { lazy } from "react";
-
+const Tests = Loadable(lazy(() => import("../pages/test/Tests")));
 const Dashboard = Loadable(lazy(() => import("../pages/dashboard/dashboard")));
 const Calendar = Loadable(lazy(() => import("../pages/calendar/Calendar")));
 const Stats = Loadable(lazy(() => import("../pages/stats/Stats")));
 const Tasks = Loadable(lazy(() => import("../pages/task/Task")));
 const Plans = Loadable(lazy(() => import("../pages/plans/Plans")));
+const ErrorPage = Loadable(lazy(() => import("../pages/404/404")));
 const mainRoutes = {
   path: "/",
   element: (
@@ -51,6 +53,10 @@ const mainRoutes = {
     {
       path: MY_PLANS_PAGE,
       element: <Plans />,
+    },
+    {
+      path: MY_TESTS_PAGE,
+      element: <Tests />,
     },
   ],
 };

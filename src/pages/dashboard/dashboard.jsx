@@ -1,5 +1,5 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
-import Search from "../../components/inpunt/Search";
+import Search from "../../components/input/Search";
 import Profile from "../../components/Profile/Profile";
 function Dashboard() {
   const theme = useTheme();

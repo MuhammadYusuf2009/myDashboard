@@ -3,7 +3,6 @@ import { Calendar, Modal, Input, TimePicker } from "rsuite";
 import { useSelector } from "../../hooks/use-selector";
 import { useDispatch } from "../../hooks/use-dispatch";
 import { deletePlan, savePlan } from "../../store/calendars";
-import "rsuite/dist/rsuite.min.css";
 import SaveButton from "../../components/button/SaveButton";
 import BackButton from "../../components/button/BackButton";
 import RemoveButton from "../../components/button/RemoveButton";
