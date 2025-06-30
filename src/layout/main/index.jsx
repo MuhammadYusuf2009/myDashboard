@@ -1,8 +1,8 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-
+import Navbar from "./navbar/index";
 function MainLayout() {
+  const theme = useTheme();
   return (
     <Box sx={{ display: "flex", minHeight: "100vh" }}>
       <Box
@@ -11,7 +11,7 @@ function MainLayout() {
           flexShrink: 0,
           position: "fixed",
           height: "100vh",
-          bgcolor: "white",
+          bgcolor: theme.palette.background.paper,
         }}
       >
         <Navbar />
@@ -21,10 +21,10 @@ function MainLayout() {
         component="main"
         sx={{
           flexGrow: 1,
-          bgcolor: "#fafafa",
+          bgcolor: theme.palette.background.default,
           marginLeft: { xs: 0, md: "250px" },
         }}
-      > 
+      >
         <Outlet />
       </Box>
     </Box>

@@ -77,7 +77,6 @@ function Task() {
       minHeight="100vh"
       maxWidth="100%"
       sx={{
-        background: "linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)",
         py: 4,
         px: { xs: 2, sm: 4 },
       }}

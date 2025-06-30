@@ -8,24 +8,25 @@ import {
   Box,
   Typography,
   Divider,
+  useTheme,
 } from "@mui/material";
 import NavList from "./NavList";
 import Logo from "../Logo";
 import Linear from "../../../components/Linear/Linear";
 import { useSelector } from "../../../hooks/use-selector";
 import { getProgress } from "../../../store/todo";
-
+import ThemeMode from "../ThemeMode";
 function Navbar() {
   const [open, setOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:900px)");
   const progress = useSelector(getProgress);
-
+  const theme = useTheme();
   const renderProgressBox = (
     <Box
       sx={{
         p: 2,
         mt: 2,
-        bgcolor: "#f0f4f8",
+        bgcolor: theme.palette.background.paper,
         borderRadius: 3,
         boxShadow: 2,
         display: "flex",
@@ -88,6 +89,7 @@ function Navbar() {
             <Box sx={{ mb: 2 }}>
               <Logo />
             </Box>
+
             <Divider sx={{ my: 2 }} />
             <NavList />
             <Box>{renderProgressBox}</Box>

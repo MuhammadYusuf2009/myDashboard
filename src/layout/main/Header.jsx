@@ -1,6 +1,5 @@
-import { Box, Stack, Toolbar } from "@mui/material";
-import Navbar from "./Navbar";
-
+import { Box, Stack } from "@mui/material";
+import Navbar from "./navbar/index";
 function Header() {
   return (
     <Stack direction="column" alignItems="flex-start">

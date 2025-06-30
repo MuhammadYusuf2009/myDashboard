@@ -1,6 +1,7 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import Search from "../../components/input/Search";
 import Profile from "../../components/Profile/Profile";
+import ThemeMode from "../../layout/main/ThemeMode";
 function Dashboard() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -35,6 +36,9 @@ function Dashboard() {
           </Box>
           <Box>
             <Profile />
+          </Box>
+          <Box>
+            <ThemeMode />
           </Box>
         </Box>
       </Box>

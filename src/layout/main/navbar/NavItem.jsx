@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Button, Menu, MenuItem, useTheme } from "@mui/material"; // ✅ useTheme
 import { Icon } from "@iconify/react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -7,6 +7,7 @@ function NavItem({ title, icon, path, children }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const buttonRef = useRef(null);
   const location = useLocation();
+  const theme = useTheme(); // ✅
 
   const isActive = path && location.pathname === path;
   const isChildActive =
@@ -20,9 +21,9 @@ function NavItem({ title, icon, path, children }) {
 
   const handleClose = () => setAnchorEl(null);
 
-  const activeColor = "#0D47A1";
-  const activeBg = "#E3F2FD";
-  const hoverBg = "#F5F7FA";
+  const activeColor = theme.palette.primary.dark;
+  const activeBg = theme.palette.primary.lighter;
+  const hoverBg = theme.palette.action.hover;
 
   if (children) {
     return (
@@ -34,7 +35,7 @@ function NavItem({ title, icon, path, children }) {
           startIcon={<Icon icon={icon} />}
           sx={{
             textTransform: "none",
-            color: isChildActive ? activeColor : "#555",
+            color: isChildActive ? activeColor : theme.palette.text.primary,
             bgcolor: isChildActive ? activeBg : "transparent",
             width: "100%",
             justifyContent: "flex-start",
@@ -76,15 +77,14 @@ function NavItem({ title, icon, path, children }) {
                 component={Link}
                 to={item.path}
                 onClick={handleClose}
-                style={{ textDecoration: "none" }}
                 sx={{
-                  color: active ? activeColor : "#333",
+                  color: active ? activeColor : theme.palette.text.primary,
                   fontWeight: active ? 600 : 500,
                   bgcolor: active ? activeBg : "transparent",
                   borderRadius: "8px",
                   transition: "all 0.2s ease",
                   "&:hover": {
-                    bgcolor: "#EEF3F9",
+                    bgcolor: hoverBg,
                   },
                 }}
               >
@@ -103,10 +103,9 @@ function NavItem({ title, icon, path, children }) {
       component={Link}
       to={path}
       startIcon={<Icon icon={icon} />}
-      style={{ textDecoration: "none" }}
       sx={{
         textTransform: "none",
-        color: isActive ? activeColor : "#555",
+        color: isActive ? activeColor : theme.palette.text.primary,
         bgcolor: isActive ? activeBg : "transparent",
         width: "100%",
         justifyContent: "flex-start",

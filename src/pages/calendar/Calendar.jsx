@@ -6,14 +6,18 @@ import { deletePlan, savePlan } from "../../store/calendars";
 import SaveButton from "../../components/button/SaveButton";
 import BackButton from "../../components/button/BackButton";
 import RemoveButton from "../../components/button/RemoveButton";
+import { useTheme } from "@mui/material";
 
 function Calendars() {
   useEffect(() => {
     document.body.style.overflowY = "auto";
-  });
+  }, []);
+
   const today = new Date();
   const dispatch = useDispatch();
   const plans = useSelector((state) => state.plans.plans);
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
 
   const dayColors = {
     0: "#B0BEC5",
@@ -23,6 +27,7 @@ function Calendars() {
     4: "#9CCC65",
     5: "#42A5F5",
     6: "#90A4AE",
+    textColor: "",
   };
 
   const [currentMonth, setCurrentMonth] = useState({
@@ -105,7 +110,14 @@ function Calendars() {
   const currentMonthPlans = plans[monthKey] || {};
 
   return (
-    <div style={{ padding: 20 }}>
+    <div
+      style={{
+        backgroundColor: isDark ? "#121212" : "#f8f8f8",
+        color: isDark ? "#ffffff" : "#000000",
+        minHeight: "100vh",
+        paddingTop: "45px",
+      }}
+    >
       <Calendar
         bordered
         onMonthChange={(newDate) =>
@@ -126,9 +138,19 @@ function Calendars() {
             date.getMonth() === currentMonth.month &&
             date.getFullYear() === currentMonth.year;
 
+          const [isHover, setIsHover] = useState(false);
+
           const style = {
-            background: isCurrentMonth ? dayColors[day] : "#f5f5f5",
-            color: isCurrentMonth ? "#fff" : "#9e9e9e",
+            background: isCurrentMonth
+              ? isHover
+                ? isDark
+                  ? "#444"
+                  : "#1976d2"
+                : dayColors[day]
+              : isDark
+              ? "#333"
+              : "#f5f5f5",
+            color: isCurrentMonth ? "#fff" : isDark ? "#bbb" : "#9e9e9e",
             borderRadius: "8px",
             padding: "4px",
             height: "100%",
@@ -142,19 +164,24 @@ function Calendars() {
             cursor: isCurrentMonth ? "pointer" : "not-allowed",
             pointerEvents: isCurrentMonth ? "auto" : "none",
             textAlign: "center",
+            transition: "background 0.2s",
           };
 
           const hasPlan = plans[getMonthKey(date)]?.[getDayKey(date)];
 
           return (
-            <div style={style}>
+            <div
+              style={style}
+              onMouseEnter={() => setIsHover(true)}
+              onMouseLeave={() => setIsHover(false)}
+            >
               {isCurrentMonth && hasPlan && (
                 <div
                   style={{
                     width: "6px",
                     height: "6px",
                     borderRadius: "50%",
-                    backgroundColor: "#000",
+                    backgroundColor: isDark ? "#fff" : "#000",
                     marginTop: "4px",
                   }}
                 />
@@ -179,7 +206,14 @@ function Calendars() {
         }}
       />
 
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        style={{
+          background: isDark ? "#333" : "#fff",
+          color: isDark ? "#fff" : "#000",
+        }}
+      >
         <Modal.Header>
           <Modal.Title>Reja qo‘shish / tahrirlash</Modal.Title>
         </Modal.Header>
@@ -230,10 +264,10 @@ function Calendars() {
           style={{
             maxHeight: "150px",
             overflowY: "auto",
-            border: "1px solid #ddd",
+            border: isDark ? "1px solid #555" : "1px solid #ddd",
             borderRadius: "8px",
             padding: "10px",
-            background: "#fff",
+            background: isDark ? "#1e1e1e" : "#fff",
           }}
         >
           <div
@@ -248,10 +282,12 @@ function Calendars() {
               <div
                 key={date}
                 style={{
-                  background: "#f9f9f9",
+                  background: isDark ? "#2c2c2c" : "#f9f9f9",
                   padding: "10px",
                   borderRadius: "6px",
-                  boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+                  boxShadow: isDark
+                    ? "0 1px 3px rgba(0,0,0,0.7)"
+                    : "0 1px 3px rgba(0,0,0,0.1)",
                   display: "flex",
                   flexDirection: "column",
                   gap: "4px",

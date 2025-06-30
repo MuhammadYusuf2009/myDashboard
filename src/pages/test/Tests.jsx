@@ -5,21 +5,44 @@ import testsData from "../../components/Test/math/math.json";
 import { Typography, Button } from "@mui/material";
 
 function Tests() {
+  const subjects = Array.from(new Set(testsData.map((t) => t.fan)));
+  const [selectedSubject, setSelectedSubject] = useState("");
   const [selectedLevel, setSelectedLevel] = useState("");
   const [testCount, setTestCount] = useState(5);
+  const [selectedVariants, setSelectedVariants] = useState({});
 
+  const levels = Array.from(
+    new Set(
+      testsData.filter((t) => t.fan === selectedSubject).map((t) => t.daraja)
+    )
+  );
+
+  const filteredTests =
+    selectedSubject && selectedLevel
+      ? testsData
+          .filter(
+            (test) =>
+              test.fan === selectedSubject && test.daraja === selectedLevel
+          )
+          .slice(0, testCount)
+      : [];
+
+  const handleSubjectChange = (event) => {
+    setSelectedSubject(event.target.value);
+    setSelectedLevel("");
+    setSelectedVariants({});
+  };
   const handleLevelChange = (event) => {
     setSelectedLevel(event.target.value);
+    setSelectedVariants({});
   };
   const handleCountChange = (event) => {
     setTestCount(Number(event.target.value));
+    setSelectedVariants({});
   };
-
-  const filteredTests = selectedLevel
-    ? testsData
-        .filter((test) => test.daraja === selectedLevel)
-        .slice(0, testCount)
-    : [];
+  const handleVariantClick = (testId, variant) => {
+    setSelectedVariants((prev) => ({ ...prev, [testId]: variant }));
+  };
 
   return (
     <div style={{ padding: "20px" }}>
@@ -27,22 +50,41 @@ function Tests() {
 
       <div style={{ display: "flex", gap: 16, marginBottom: 20 }}>
         <Select
+          value={selectedSubject}
+          onChange={handleSubjectChange}
+          displayEmpty
+          style={{ minWidth: "160px" }}
+        >
+          <MenuItem value="">
+            <em>Fanni tanlang</em>
+          </MenuItem>
+          {subjects.map((fan) => (
+            <MenuItem key={fan} value={fan}>
+              {fan}
+            </MenuItem>
+          ))}
+        </Select>
+        <Select
           value={selectedLevel}
           onChange={handleLevelChange}
           displayEmpty
-          style={{ minWidth: "200px" }}
+          style={{ minWidth: "140px" }}
+          disabled={!selectedSubject}
         >
           <MenuItem value="">
             <em>Darajani tanlang</em>
           </MenuItem>
-          <MenuItem value="oson">Boshlang‘ich</MenuItem>
-          <MenuItem value="ortacha">O‘rta</MenuItem>
-          <MenuItem value="qiyin">Yuqori</MenuItem>
+          {levels.map((level) => (
+            <MenuItem key={level} value={level}>
+              {level}
+            </MenuItem>
+          ))}
         </Select>
         <Select
           value={testCount}
           onChange={handleCountChange}
-          style={{ minWidth: "120px" }}
+          style={{ minWidth: "100px" }}
+          disabled={!selectedLevel}
         >
           {[5, 10, 15, 20, 30, 50].map((count) => (
             <MenuItem key={count} value={count}>
@@ -53,7 +95,7 @@ function Tests() {
       </div>
 
       {filteredTests.length === 0 && selectedLevel && (
-        <p>Tanlangan darajada testlar topilmadi.</p>
+        <p>Tanlangan fanda va darajada testlar topilmadi.</p>
       )}
 
       {filteredTests.length > 0 && (
@@ -83,9 +125,8 @@ function Tests() {
                 maxWidth: "350px",
               }}
             >
-              <strong>Thema:</strong> {test.thema} <br />
               <Typography variant="h6" style={{ marginTop: "8px" }}>
-                <strong>Sovol:</strong> {test.savol} <br />
+                <strong>Savol:</strong> {test.savol} <br />
               </Typography>
               <div
                 style={{
@@ -95,20 +136,42 @@ function Tests() {
                   marginTop: 8,
                 }}
               >
-                {test.variantlar.map((variant, index) => (
-                  <Button
-                    key={index}
-                    appearance="ghost"
-                    style={{
-                      minWidth: 80,
-                      fontWeight: 500,
-                      border: "1px solid #1976d2",
-                      color: "#1976d2",
-                    }}
-                  >
-                    {variant}
-                  </Button>
-                ))}
+                {test.variantlar.map((variant, index) => {
+                  let color = "#1976d2";
+                  let bg = "#fff";
+                  if (selectedVariants[test.id]) {
+                    if (
+                      variant === test.javob &&
+                      selectedVariants[test.id] === variant
+                    ) {
+                      color = "#fff";
+                      bg = "#43a047";
+                    } else if (selectedVariants[test.id] === variant) {
+                      color = "#fff";
+                      bg = "#e53935";
+                    } else if (variant === test.javob) {
+                      color = "#43a047";
+                    }
+                  }
+                  return (
+                    <Button
+                      key={index}
+                      variant="outlined"
+                      onClick={() => handleVariantClick(test.id, variant)}
+                      style={{
+                        minWidth: 80,
+                        fontWeight: 500,
+                        border: "1px solid #1976d2",
+                        color,
+                        background: bg,
+                        transition: "all 0.2s",
+                      }}
+                      disabled={!!selectedVariants[test.id]}
+                    >
+                      {variant}
+                    </Button>
+                  );
+                })}
               </div>
             </li>
           ))}

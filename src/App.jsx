@@ -5,6 +5,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./store";
 import { useEffect } from "react";
 import "rsuite/dist/rsuite.min.css";
+import { ModeProvider } from "./theme/ModeContext";
+import { ThemeProvider } from "./theme/ThemeProvider";
 function App() {
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -21,9 +23,13 @@ function App() {
   return (
     <ReduxProvider store={store}>
       <PersistGate persistor={persistor}>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
+        <ModeProvider>
+          <ThemeProvider>
+            <BrowserRouter>
+              <Router />
+            </BrowserRouter>
+          </ThemeProvider>
+        </ModeProvider>
       </PersistGate>
     </ReduxProvider>
   );
