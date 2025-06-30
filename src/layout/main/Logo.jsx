@@ -1,18 +1,18 @@
-import { Typography } from "@mui/material";
+import { useTheme } from "@mui/material";
 
-function Logo({ small = false }) {
+function Logo() {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+
+  const darkLightLogo = isDark ? "/logolight.png" : "/darklogo.png";
+
   return (
-    <Typography
-      variant="h6"
-      sx={{
-        fontWeight: 700,
-        fontSize: small ? "18px" : "24px",
-        color: "#333",
-        userSelect: "none",
-      }}
-    >
-      <img src="/Logo.png" width={200} alt="" style={{ marginTop: "20px" }} />
-    </Typography>
+    <img
+      src={darkLightLogo}
+      width={200}
+      alt="Logo"
+      style={{ marginTop: "20px" }}
+    />
   );
 }
 
