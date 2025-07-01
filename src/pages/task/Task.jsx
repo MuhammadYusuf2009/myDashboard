@@ -118,6 +118,26 @@ function Task() {
             value={todoText}
             onChange={(e) => setTodoText(e.target.value)}
             variant="outlined"
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                color: (theme) => theme.palette.primary.main,
+                "& fieldset": {
+                  borderColor: (theme) => theme.palette.primary.main,
+                },
+                "&:hover fieldset": {
+                  borderColor: (theme) => theme.palette.secondary.main,
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: (theme) => theme.palette.success.main,
+                },
+              },
+              "& .MuiInputLabel-root": {
+                color: (theme) => theme.palette.primary.main,
+                "&.Mui-focused": {
+                  color: (theme) => theme.palette.success.main,
+                },
+              },
+            }}
             size="small"
           />
           <Box
